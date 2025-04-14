@@ -17,35 +17,28 @@ const ReceiveMailScreen = () => {
   const sortOption = useSortStore((state) => state.sortOption);
   const selectedGroup = useMailStore((state) => state.selectedGroup);
   const selectedMail = useMailStore((state) => state.selectedMail);
-  const isExpanded = useMailStore((state) => state.isExpanded);
   const receiveMails = useMailStore((state) => state.receiveMails);
   const groupedMails = useMailStore((state) => state.groupedMails);
 
   return (
     <div className="MailScreen-container">
-      {isExpanded ? (
-        <MailDetailMax />
-      ) : (
-        <>
-          {/* 왼쪽: 메일 목록 */}
-          <div className="MailScreen-list">
-            {sortOption === SORT_OPTIONS.TIME ? (
-              <TimeSortedList mails={receiveMails} />
-            ) : (
-              <SenderGroupedList mails={groupedMails} />
-            )}
-          </div>
+      {/* 왼쪽: 메일 목록 */}
+      <div className="MailScreen-list">
+        {sortOption === SORT_OPTIONS.TIME ? (
+          <TimeSortedList mails={receiveMails} />
+        ) : (
+          <SenderGroupedList mails={groupedMails} />
+        )}
+      </div>
 
-          {/* 오른쪽: 선택된 항목에 따라 변경 */}
-          <div className="MailScreen-preview">
-            {sortOption === SORT_OPTIONS.SENDER && selectedGroup.length > 0 ? (
-              <MailPreviewContainer />
-            ) : selectedMail ? (
-              <MailDetail />
-            ) : null}
-          </div>
-        </>
-      )}
+      {/* 오른쪽: 선택된 항목에 따라 변경 */}
+      <div className="MailScreen-preview">
+        {sortOption === SORT_OPTIONS.SENDER && selectedGroup.length > 0 ? (
+          <MailPreviewContainer />
+        ) : selectedMail ? (
+          <MailDetail />
+        ) : null}
+      </div>
     </div>
   );
 };
