@@ -1,0 +1,119 @@
+.mailListHeaderM-wrapper {
+  display: none;  
+}
+
+/* 모바일 */
+@media (max-width: 425px) {
+  .mailListHeaderM-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem;
+    height: 2.5rem;
+    border-radius: 1.1875rem 1.1875rem 0 0;
+    border-bottom: 1.5px solid #efeff0;
+    background: #FFF;
+  }
+  .mailListHeaderM-wrapper.detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem;
+    height: 2.5rem;
+    border-radius: 1.1875rem 1.1875rem 0 0;
+    border-bottom: 1.5px solid #efeff0;
+    background: #FFF;
+  }
+
+  /* 공통 버튼 */
+  .mailListHeaderM-wrapper button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    padding: 0 0.3rem; 
+    background: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    outline: none;
+    font-family: 'SUIT', sans-serif;
+  
+    &:hover {
+      border: 1px solid #e6e6ea;
+      border-radius: 0.5rem;
+    }
+  }
+
+  /* 공통 아이콘 색상 */
+  .mailListHeaderM-icon {
+    color: #3e3e3e;
+  }
+
+  .mailListHeaderM-left {
+    display: flex;
+    align-items: center;
+    flex: 1;
+  }
+
+  .mailListHeaderM-right {
+    display: flex;
+    align-items: center;
+  }
+
+  /* 정렬 옵션 컨테이너 */
+  .mailListHeaderM-sortOptions-items {
+    display: flex;
+    height: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .mailListHeaderM-sortOptions-arrow {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: rotate(180deg);
+  }
+  .mailListHeaderM-sortOptions-arrow.open {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: rotate(0deg);
+  }
+
+  /* 정렬 옵션 아이템 컨테이너 */
+  .mailListHeaderM-sortOptions-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.875rem;
+    background: #FFF;
+    box-shadow: 0px 2px 7.3px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    z-index: 100;
+  }
+  .mailListHeaderM-sortOptions-container p {
+    padding: 0.6rem 1.2rem;
+    margin: 0;
+
+    white-space: nowrap;
+    color: #3E3D3D;
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    &:hover {
+      background-color: rgba(229, 231, 233, 0.4);
+    }
+  }
+
+  .mailListHeaderM-title {
+    white-space: nowrap;
+    color: #3e3e3e;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

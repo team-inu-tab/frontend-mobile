@@ -1,0 +1,6 @@
+projectKey=SQ_Tutorial
+serverUrl=http://127.0.0.1:5173
+serverVersion=25.1.0.102122
+dashboardUrl=http://127.0.0.1:5173/dashboard?id=SQ_Tutorial
+ceTaskId=7b2033eb-9c19-46ab-ad85-cb869eca798d
+ceTaskUrl=http://127.0.0.1:5173/api/ce/task?id=7b2033eb-9c19-46ab-ad85-cb869eca798d

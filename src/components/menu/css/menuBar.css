@@ -1,0 +1,96 @@
+.menuBar-wrapper {
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  width: 12rem;
+  padding: 2rem 0.75rem;
+  border-radius: 30px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  transition: width 0.3s ease-in-out, padding 0.3s ease-in-out;
+  z-index: 100;
+  background: white;
+}
+.menuBar-wrapper.menuBar-close {
+  display: block;
+  width: 4.375rem;
+  align-items: center;
+  padding: 2rem 0;
+  transition: width 0.3s ease-in-out, padding 0.3s ease-in-out;
+  background: white;
+}
+
+.menuBar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  transition: padding 0.3s ease-in-out, gap 0.3s ease-in-out;
+}
+.menuBar-header.menuBar-close {
+  gap: 0.75rem;
+  padding: 0 0.75rem;
+}
+
+.menuBar-logo {
+  width: 1.8125rem;
+  height: 1.375rem;
+}
+
+.menuBar-arrow {
+  transform: rotate(-90deg);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.menuBar-arrow.menuBar-close {
+  transform: rotate(90deg);
+}
+
+.menuBar-text {
+  color: #2f3438;
+  font-family: Pretendard;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 0;
+  margin: 0.75rem 0 0;
+  white-space: nowrap;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.menuBar-text.menuBar-close {
+  display: none;
+}
+
+.menuBar-menuContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 1.25rem 0 0;
+  gap:0.5rem;
+}
+.menuBar-menuContainer.menuBar-close {
+  margin: 2.5rem 0 0;
+  gap: 0.5rem;
+}
+
+/* 모바일 */
+@media (max-width: 425px) {
+  .menuBar-wrapper {
+    display: none;
+  }
+  .menuBar-wrapper.menuBar-close {
+    display: none;
+  }
+}
+
+/* 모바일 */
+@media (max-width: 425px) {
+  .menuBar-wrapper {
+    position: fixed;
+    display: flex;
+    background-color: white;
+    z-index: 9999;
+  }
+
+  .menuBar-arrow {
+    display: none;
+  }
+}

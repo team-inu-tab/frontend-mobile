@@ -1,0 +1,349 @@
+.mailTitle{
+    width: 90%;
+    height: 29px;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    border:none;
+    outline: none;
+    font-family: 'SUIT';
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.mailTitle::placeholder{
+    color: #3E3D3D;
+    font-family: 'SUIT';
+}
+
+.recieverTitleContainer{
+    display: flex;
+    position: absolute;
+    top: 19%;
+    left: 5%;
+    align-items: center;
+    padding-left: 2%;
+    width: 88%;
+    height:6.5%;
+    background-color: rgba(205, 217, 245, 0.5);
+    font-weight: bold;
+    text-align: left;
+    border-radius: 50px;
+    z-index: 1;
+}
+
+.recieverLabel{
+    font-weight: lighter;
+    color: #3E3D3D;
+    font-family: 'SUIT';
+}
+
+.recieverTitle{
+    position: relative;
+    display: inline-block;
+    margin-left: 2%;
+    white-space: nowrap;
+    width: auto;
+    height: 80%;
+    font-weight: bold;
+    color: #3E3D3D;
+    border:none;
+    outline: none;
+    background-color: rgba(205, 217, 245, 0.1);
+    overflow: visible;
+}
+
+.tagify.recieverTitle {
+    border: none;
+    outline: none;
+  }
+
+.tagify {
+    width: auto;
+    min-height: 44px; 
+    display: inline-block; 
+    border: none;
+    outline: none;
+    white-space: nowrap;
+}
+
+.tagify.tagify {
+    --tags-disabled-bg: #748EEE;
+    --tag-bg: (#748EEE, 80%);
+    --tags-focus-border-color: #748EEE;
+    --tags-hover-border-color: #748EEE;
+    --tag-hover: #748EEE;
+    --tag-border-radius: 16px;
+    --tag-pad: 0.5em 0.5em;
+    --tag-remove-btn-color: #FFFFFF;
+}
+
+.tagify.tagify--empty {
+    border: none;
+    outline: none;
+}
+
+.tagify.tagify--focus {
+    box-shadow: none;
+    border: none;
+    outline: none;
+}
+
+.tagify__tag {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #748EEE;
+    border: none;
+    border-radius: 16px;
+    z-index: 1;
+}
+
+.tagify__tag-text {
+    color: #FFFFFF;
+    font-family: 'SUIT';
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.tagify__tag__removeBtn {
+    color: #ff0000;
+}
+
+.toMeText {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    right: 2.5%;
+    color: #748EEE;
+}
+
+.isToMe {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    right: 10.2%;
+    border-color: #748EEE;
+    outline: none;
+    
+}
+
+.refTitleContainer {
+    display: flex;
+    position: absolute;
+    top: 26.5%;
+    left: 5%;
+    align-items: center;
+    padding-left: 2%;
+    width: 88%;
+    height:6.5%;
+    background-color: rgba(205, 217, 245, 0.5);
+    font-weight: bold;
+    text-align: left;
+    border-radius: 50px;
+    z-index: 1;
+}
+
+.refLabel {
+    font-weight: lighter;
+    color: #3E3D3D;
+}
+
+.refTitle {
+    position: relative;
+    margin-left: 2%;
+    width: 76%;
+    height: 80%;
+    font-weight: bold;
+    color: #3E3D3D;
+    border:none;
+    outline: none;
+    background-color: rgba(205, 217, 245, 0.1);
+}
+
+.attachedContainer{
+    display: flex;
+    position: absolute;
+    top: 34%;
+    left: 5%;
+    align-items: center;
+    padding-left: 2%;
+    width: 88%;
+    height: 15%;
+    background-color: rgba(205, 217, 245, 0.5);
+    font-weight: bold;
+    text-align: left;
+    border-radius: 15px;
+    z-index: 1;
+}
+
+.attatchedIcon{
+    position: absolute;
+    display: flex;
+    top: 10%;
+    left: 2.4%;
+    width: 1rem;
+    height: auto;
+}
+
+.attachedLabel{
+    position: absolute;
+    display: flex;
+    top: -4.8%;
+    left: 4.8%;
+    color: #3E3D3D;
+    font-family: 'SUIT';
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.3;
+}
+
+.switchContainer {
+    position: absolute;
+    width: 88%;
+    height: 6%;
+    top: 52%;
+}
+
+.aiOnLogo {
+    position: absolute;
+    display: inline-block;
+    transform: translateY(-50%);
+    width: 0.63475rem;
+    height: 0.6875rem;
+    top: 0.8rem;
+}
+
+.aiText {
+    position: absolute;
+    display: inline-block;
+    transform: translateY(-36%);
+    left: 0.54rem;
+    font-family: 'SUIT';
+    font-weight: bold;
+    font-size: 0.875rem;
+    color: #000000;
+}
+
+.aiText.on {
+    position: absolute;
+    display: inline-block;
+    transform: translateY(-36%);
+    padding-left: 0.3rem;
+    font-weight: bold;
+    background: linear-gradient(
+      90deg, 
+      #D692F8 0%, 
+      #6C57F3 33%, 
+      #5F6FFC 84%, 
+      #D692F8 100%
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 10s linear infinite;
+  }
+  
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% -100%;
+    }
+    100% {
+      background-position: -50% 0%;
+    }
+  }
+
+.aiToggleSwitch {
+    position: relative;
+    display: flex;
+}
+
+.writeContainer {
+    position: absolute;
+    display: flex;
+    bottom: 1.5%;
+    flex-shrink: 0;
+    font-family: 'SUIT';
+    font-size: 0.6875rem;
+}
+
+.writeContainer.on {
+    position: absolute;
+    display: flex;
+    bottom: 1.5%;
+    flex-shrink: 0;
+}
+
+.buttonContainer {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    width: 25vw;
+    bottom: -54%;
+}
+
+.reservationButton {
+    position: absolute;
+    justify-content: center;
+    align-items:center;
+    display: flex;
+    border-radius: 18.5px;
+    width: 124px;
+    height: 37px;
+    right: 53%;
+    cursor: pointer;
+    border: none;
+    background-color: #FFFFFF;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0px 2px 6.6px 0px rgba(0, 0, 0, 0.25);
+}
+
+.sendButton {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    border-radius: 18.5px;
+    width: 124px;
+    height: 37px;
+    left: 53%;
+    cursor: pointer;
+    border: none;
+    background-color: #748EEE;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0px 2px 6.6px 0px rgba(0, 0, 0, 0.25);
+}
+
+.compImg {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    z-index: 2;
+}
+
+.sendCompContainer {
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.sendCheck{
+    position: absolute;
+    display: flex;
+    top: 40%;
+    left: 48%;
+}
+
+.sendCompText {
+    position: absolute;
+    display: flex;
+    font-weight: bold;
+    top: 50%;
+    left: 48%;
+}

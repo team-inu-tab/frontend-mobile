@@ -1,0 +1,226 @@
+@font-face {
+    font-family: 'SUIT';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.formContainer {
+    position: relative;
+    z-index: 1;
+}
+
+.backGround {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 92%;
+}
+
+.symbolLogo{
+    position: absolute;
+    width: 3.0625rem;
+    height: 2.3125rem;
+    left: 20%;
+    top: 15%;
+}
+
+.namePlaceHolder {
+    position: absolute;
+    top: 28%;
+    left: 20%;
+    color: #3E3D3D;
+    font-family: 'SUIT';
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.nameInput {
+    position: absolute;
+    top: 27.6%;
+    left: 32%;
+    width: 44%;
+    height: auto;
+    border: none;
+    outline: none;
+
+    color: #3E3D3D;
+    font-family: 'SUIT';
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.inputLine1 {
+    position: absolute;
+    top: 32%;
+    width: 19.49019rem;
+    z-index: 1;
+}
+
+.schoolPlaceHolder {
+    position: absolute;
+    top: 33.6%;
+    left: 20%;
+    color: #3E3D3D;
+    font-family: 'SUIT';
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    z-index: 1;
+}
+
+.affiliationInput {
+    position: absolute;
+    top: 33.4%;
+    left: 32%;
+    width: 44%;
+    height: auto;
+    border: none;
+    outline: none;
+    color: #3E3D3D;
+    font-family: 'SUIT';
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.affiliationInput::placeholder{
+    color: #3E3D3D;
+    font-family: 'SUIT';
+    font-size: 0.8125rem;
+}
+
+.departmentPlaceHolder {
+    position: absolute;
+    top: 41.2%;
+    left: 20%;
+    font-family: 'SUIT';
+    font-size: 0.8125rem;
+}
+
+.inputLine2 {
+    position: absolute;
+    top: 44.8%;
+    width: 19.49019rem;
+    z-index: 1;
+}
+
+.departmentInput {
+    position: absolute;
+    top: 40.8%;
+    width: 44%;
+    left: 32%;
+    height: auto;
+    border: none;
+    outline: none;
+    color: #3E3D3D;
+    font-family: 'SUIT';
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+}
+
+.studentNumPlaceHolder {
+    position: absolute;
+    top: 46.4%;
+    left: 20%;
+    color: #3E3D3D;
+    font-family: 'SUIT';
+    font-size: 0.8125rem;
+}
+
+.studentNumInput {
+    position: absolute;
+    top: 46%;
+    left: 32%;
+    width: 44%;
+    height: auto;
+    border: none;
+    outline: none;
+    color: #3E3D3D;
+    font-family: 'SUIT';
+    font-size: 0.8125rem;
+}
+
+.gradePlaceHolder {
+    position: absolute;
+    top: 54.8%;
+    left: 20%;
+    color: #3E3D3D;
+    font-family: 'SUIT';
+    font-size: 0.8125rem;
+}
+
+.gradeInput {
+    position: absolute;
+    top: 54.6%;
+    left: 32%;
+    width: 44%;
+    height: auto;
+    border: none;
+    outline: none;
+    color: #3E3D3D;
+    font-family: 'SUIT';
+    font-size: 0.8125rem;
+}
+.inputLine3 {
+    position: absolute;
+    top: 58.4%;
+    width: 19.49019rem;
+    z-index: 1;
+}
+
+.phoneNumPlaceHolder {
+    position: absolute;
+    top: 60.2%;
+    left: 20%;
+    color: #3E3D3D;
+    font-family: 'SUIT';
+    font-size: 0.8125rem;
+}
+
+.phoneNumInput {
+    position: absolute;
+    top: 60%;
+    left: 32%;
+    width: 44%;
+    height: auto;
+    border: none;
+    outline: none;
+    color: #3E3D3D;
+    font-family: 'SUIT';
+    font-size: 0.8125rem;
+}
+
+.studentNumError {
+    position: absolute;
+    top: 49%;
+    right: 20%;
+    color: #ED8081;
+    font-family: 'SUIT';
+    font-size: 0.6125rem;
+    font-weight: bold;
+}
+
+.addInfoCompleteButton {
+    position: absolute;
+    justify-content: center;
+    top: 75%;
+    background-color: #B5C9F1;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}

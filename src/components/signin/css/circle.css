@@ -1,0 +1,67 @@
+/* src/components/common/css/circle.css */
+
+/* Circle 클래스 정의 */
+.circle {
+    width: 32rem;
+    height: 32rem;
+    max-width: 600px;
+    max-height: 600px;
+    min-width: 200px;
+    min-height: 200px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.196);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* ::before의 위치 기준 */
+  }
+  
+  /* Linear Gradient Stroke */
+  .circle::before {
+    content: '';
+    position: absolute;
+    top: -0.8vw;
+    left: -0.8vw;
+    right: -0.8vw;
+    bottom: -0.8vw;
+    border-radius: 50%;
+    opacity: 0.6;
+    background: linear-gradient(120deg, #9590d5, #7facee);
+    z-index: -1;
+    max-width: 680px;
+    max-height: 680px;
+    min-width: 200px;
+    min-height: 200px;
+  }
+  
+  /* 반응형 스타일링: 화면 너비가 768px 이하일 때 */
+  @media (max-width: 768px) {
+    .circle {
+      width: 40vw;
+      height: 40vw;
+    }
+  
+    .circle::before {
+      top: -2vw;
+      left: -2vw;
+      right: -2vw;
+      bottom: -2vw;
+    }
+  }
+  
+  /* 반응형 스타일링: 화면 너비가 576px 이하일 때 */
+  @media (max-width: 576px) {
+    .circle {
+      width: 50vw;
+      height: 50vw;
+    }
+  
+    .circle::before {
+      top: -2.5vw;
+      left: -2.5vw;
+      right: -2.5vw;
+      bottom: -2.5vw;
+    }
+  }
+  

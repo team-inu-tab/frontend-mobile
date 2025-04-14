@@ -1,0 +1,19 @@
+.inputTop {
+    width: 60%;
+    height: 8%;
+    border-top: 1px;
+    border-left: 1px;
+    border-right: 1px;
+    outline: none;
+    font-size: 9pt;
+}
+
+.inputBottom{
+    width: 60%;
+    height: 8%;
+    border-bottom: 1px;
+    border-left: 1px;
+    border-right: 1px;
+    outline: none;
+    font-size: 9pt;
+}

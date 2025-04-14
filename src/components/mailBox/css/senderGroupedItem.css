@@ -1,0 +1,38 @@
+.senderGroupedItem-wrapper {
+  display: flex;
+  padding: 0.75rem 1rem;
+  flex-direction: column;
+  border-radius: 1.4375rem;
+  background: rgba(255, 255, 255, 0.42);
+  box-shadow: 2px 2px 6.8px 0px rgba(0, 0, 0, 0.25);
+}
+
+.senderGroupedItem-senderContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: stretch;
+  padding: 0 0.5rem 0.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.senderGroupedItem-sender {
+  color: #2F3438;
+
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+
+.senderGroupedItem-container {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}

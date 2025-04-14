@@ -1,0 +1,38 @@
+.timeSortedList-wrapper {
+  display: flex;
+  height: 100%;
+  padding: 0.75rem 1rem;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1.4375rem;
+  background: rgba(255, 255, 255, 0.42);
+  box-shadow: 2px 2px 6.8px 0px rgba(0, 0, 0, 0.25);
+}
+
+.timeSortedList-header {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  gap: 0.5rem;
+  align-self: stretch;
+  margin-bottom: 0.5rem;
+}
+
+.timeSortedList-title {
+  color: #2F3438;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.timeSortedList-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.timeSortedList-container p {
+  white-space: nowrap;
+  font-size: 0.8rem;
+}

@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'SUIT-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.backGround{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 92%;
+}
+
+.compSymbolLogo{
+    position: absolute;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    top: 25%;
+    left: 8%;
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-bottom: 4%;
+    width: 10.33669rem;
+    height: 8.19106rem;
+}
+
+.check{
+    position: absolute;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    top: 55%;
+}
+
+.compText {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    bottom: 25%;
+    font-family: 'SUIT-Regular';
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 300;
+    text-align: center;
+}
