@@ -10,18 +10,18 @@ export default defineConfig(({ mode }) => {
     plugins: [react(), svgr()],
     server: {
       cors: {
-        origin: isProduction ? "https://maeilmail.co.kr" : true,
+        origin: isProduction ? "https://m.maeilmail.co.kr" : true,
         methods: ["GET", "POST", "PUT", "DELETE"],
         credentials: true,
       },
       hmr: {
-        host: 'maeilmail.co.kr',
-        protocol: 'wss',
-        port: 433
+        host: "m.maeilmail.co.kr",
+        protocol: "wss",
+        port: 433,
       },
       host: "0.0.0.0",
       port: 5174,
-      allowedHosts: ["maeilmail.co.kr"],
+      allowedHosts: ["m.maeilmail.co.kr"],
     },
     resolve: {
       alias: {
@@ -39,7 +39,6 @@ export default defineConfig(({ mode }) => {
     },
   };
 
-  
   if (!isProduction) {
     config.server.hmr = true;
   }
