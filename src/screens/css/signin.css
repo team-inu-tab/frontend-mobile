@@ -10,32 +10,22 @@
     z-index: 1;
 }
 
-.backGround {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    z-index: -1;
-    opacity: 92%;
-}
-
-.symbolLogo{
+.symbolLogo {
     position: absolute;
-    width: 3.0625rem;
-    height: 2.3125rem;
-    left: 20%;
-    top: 15%;
+    width: 1.406rem;
+    height: 1.031rem;
+    flex-shrink: 0;
+    top: 11.25%;
+    left: 24%;
 }
 
 .namePlaceHolder {
     position: absolute;
     top: 28%;
-    left: 20%;
+    left: 24%;
     color: #3E3D3D;
     font-family: 'SUIT';
-    font-size: 0.8125rem;
+    font-size: 0.46244rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -52,7 +42,7 @@
 
     color: #3E3D3D;
     font-family: 'SUIT';
-    font-size: 0.8125rem;
+    font-size: 0.46244rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -61,21 +51,20 @@
 .inputLine1 {
     position: absolute;
     top: 32%;
-    width: 19.49019rem;
-    z-index: 1;
+    width: 11.09275rem;
+    flex-shrink: 0;
 }
 
 .schoolPlaceHolder {
     position: absolute;
     top: 33.6%;
-    left: 20%;
+    left: 24%;
     color: #3E3D3D;
     font-family: 'SUIT';
-    font-size: 0.8125rem;
+    font-size: 0.46244rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    z-index: 1;
 }
 
 .affiliationInput {
@@ -86,33 +75,33 @@
     height: auto;
     border: none;
     outline: none;
+
     color: #3E3D3D;
     font-family: 'SUIT';
-    font-size: 0.8125rem;
+    font-size: 0.46244rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
 }
 
-.affiliationInput::placeholder{
-    color: #3E3D3D;
-    font-family: 'SUIT';
-    font-size: 0.8125rem;
-}
 
 .departmentPlaceHolder {
     position: absolute;
     top: 41.2%;
-    left: 20%;
+    left: 24%;
+    color: #3E3D3D;
     font-family: 'SUIT';
-    font-size: 0.8125rem;
+    font-size: 0.46244rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
 .inputLine2 {
     position: absolute;
     top: 44.8%;
-    width: 19.49019rem;
-    z-index: 1;
+    width: 11.09275rem;
+    flex-shrink: 0;
 }
 
 .departmentInput {
@@ -123,9 +112,10 @@
     height: auto;
     border: none;
     outline: none;
+
     color: #3E3D3D;
     font-family: 'SUIT';
-    font-size: 0.8125rem;
+    font-size: 0.46244rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -135,10 +125,13 @@
 .studentNumPlaceHolder {
     position: absolute;
     top: 46.4%;
-    left: 20%;
+    left: 24%;
     color: #3E3D3D;
     font-family: 'SUIT';
-    font-size: 0.8125rem;
+    font-size: 0.46244rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
 .studentNumInput {
@@ -149,18 +142,25 @@
     height: auto;
     border: none;
     outline: none;
+
     color: #3E3D3D;
     font-family: 'SUIT';
-    font-size: 0.8125rem;
+    font-size: 0.46244rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
 .gradePlaceHolder {
     position: absolute;
     top: 54.8%;
-    left: 20%;
+    left: 24%;
     color: #3E3D3D;
     font-family: 'SUIT';
-    font-size: 0.8125rem;
+    font-size: 0.46244rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
 .gradeInput {
@@ -171,24 +171,32 @@
     height: auto;
     border: none;
     outline: none;
+
     color: #3E3D3D;
     font-family: 'SUIT';
-    font-size: 0.8125rem;
+    font-size: 0.46244rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
+
 .inputLine3 {
     position: absolute;
     top: 58.4%;
-    width: 19.49019rem;
-    z-index: 1;
+    width: 11.09275rem;
+    flex-shrink: 0;
 }
 
 .phoneNumPlaceHolder {
     position: absolute;
     top: 60.2%;
-    left: 20%;
+    left: 24%;
     color: #3E3D3D;
     font-family: 'SUIT';
-    font-size: 0.8125rem;
+    font-size: 0.46244rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
 .phoneNumInput {
@@ -199,9 +207,13 @@
     height: auto;
     border: none;
     outline: none;
+
     color: #3E3D3D;
     font-family: 'SUIT';
-    font-size: 0.8125rem;
+    font-size: 0.46244rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
 .studentNumError {
@@ -219,8 +231,17 @@
     justify-content: center;
     top: 75%;
     background-color: #B5C9F1;
-    color: #FFFFFF;
     border: none;
-    border-radius: 0.5rem;
+    border-radius: 0.28481rem;
     cursor: pointer;
+    width: 11.10656rem;
+    height: 1.21031rem;
+    flex-shrink: 0;
+
+    color: #FFF;
+    font-family: Inter;
+    font-size: 0.46275rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }

@@ -133,7 +133,6 @@ function Signin() {
 
   return (
     <Container>
-      <img src={backGround} className="backGround" />
       <Circle className="formContainer">
         <img src={symbolLogo} className="symbolLogo" />
 
