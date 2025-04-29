@@ -12,10 +12,7 @@ import { useEffect } from "react";
 
 function Landing() {
   useEffect(() => {
-    // 컴포넌트가 마운트될 때 overflow를 auto로 변경
     document.body.style.overflow = "auto";
-
-    // 컴포넌트가 언마운트될 때 overflow를 hidden으로 복원
     return () => {
       document.body.style.overflow = "hidden";
     };
@@ -31,7 +28,7 @@ function Landing() {
       <img src={symbolLogo} className="landingSymbolLogo" />
       <p className="serviceText">Maeil, MAIL.</p>
       <img src={landingAI} className="landingAILogo"></img>
-      <p className="introText">생성형 AI를 이용한 메일 자동 교정 서비스</p>
+      <p className="introText">AI mail service</p>
 
       <button className="serviceStartButton" onClick={handleLogin}>
         <img src={serviceStartButton} className='buttonImg'alt="서비스 시작하기" />
@@ -43,12 +40,11 @@ function Landing() {
       <p className="catchphrase2">타이핑은 최소로, 완성은 탭으로.</p>
 
       <div className="functionContainer">
-        <p className="subState">Tab AI가 당신의 메일을 분석합니다.</p>
         <div className="function1Wrapper">
           <img src={function1} className="function1"></img>
           <p className="functionIntro1">Type</p>
           <img src={functionState1} className="funcState1"></img>
-      </div>
+        </div>
 
         <div className="function2Wrapper">
           <img src={function2} className="function2"></img>
