@@ -1,20 +1,24 @@
 import "@components/mailBox/css/mailListHeaderM.css";
 import { useMailStore, useMenuStore } from "../../store";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Menu from "@assets/icons/menu.svg?react";
 import Logo from "@assets/icons/logo.svg?react";
+import Back from "@assets/icons/arrow_back.svg?react";
 
 const MailListHeaderM = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
-  const setSelectedMailId = useMailStore((state) => state.setSelectedMailId);
+  const selectedMail = useMailStore((state) => state.selectedMail);
+  const setSelectedMail = useMailStore((state) => state.setSelectedMail);
   const setSelectedGroup = useMailStore((state) => state.setSelectedGroup);
   const toggleMenuBar = useMenuStore((state) => state.toggleMenuBar);
 
   // 뒤로가기 눌렀을 때 선택 초기화
   const handleBack = () => {
-    setSelectedMailId(null);
+    setSelectedMail(null);
     setSelectedGroup([]);
+    navigate(-1);
   };
 
   /**
@@ -33,11 +37,15 @@ const MailListHeaderM = () => {
 
   return (
     <div className="mailListHeaderM-wrapper">
-      {/* 햄버거 메뉴 */}
-      <button onClick={toggleMenuBar}>
-        <Menu className="mailListHeaderM-icon" />
-      </button>
-
+      {selectedMail ? (
+        <button onClick={handleBack}>
+          <Back className="mailListHeaderM-icon" />
+        </button>
+      ) : (
+        <button onClick={toggleMenuBar}>
+          <Menu className="mailListHeaderM-icon" />
+        </button>
+      )}
       {/* 메일함 타이틀 */}
       <div className="mailListHeaderM-title-wrapper">
         <Logo />

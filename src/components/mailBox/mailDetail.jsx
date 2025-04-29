@@ -1,6 +1,5 @@
 import "@components/mailBox/css/mailDetail.css";
 import { useMailStore } from "../../store";
-import ExpandArrow from "@assets/icons/expandArrow.svg?react";
 import FileItem from "./fileItem";
 import { useEffect, useState } from "react";
 import { formatReceiveDate } from "../../utils/emailUtils";
@@ -12,7 +11,6 @@ import { parseGmailContent } from "../../utils/parseGmailContent";
  */
 const MailDetail = () => {
   const selectedMail = useMailStore((state) => state.selectedMail); // 현재 선택된 메일 가져오기
-  const toggleExpanded = useMailStore((state) => state.toggleExpanded);
 
   const [decodedBody, setDecodedBody] = useState("");
 
@@ -42,23 +40,25 @@ const MailDetail = () => {
   return (
     <div className="mailDetail-wrapper">
       <div className="mailDetail-container">
-        {/* 메일 제목 및 발신자 정보 */}
+        {/* 메일 정보 */}
         <div className="mailDetail-header">
-          <div className="mailDetail-header-container">
-            <span className="mailDetail-title">{selectedMail.title}</span>
-            {selectedMail.sender && (
-              <span className="mailDetail-sender">
-                보낸사람: {selectedMail.sender}
-              </span>
-            )}
-            {selectedMail.receiver && (
-              <span className="mailDetail-sender">
-                받는사람: {selectedMail.receiver}
-              </span>
-            )}
-          </div>
-          {/* 확장 버튼 */}
-          <ExpandArrow className="expandArrow-icon" onClick={toggleExpanded} />
+          {/* 메일 제목 */}
+          <span className="mailDetail-title">{selectedMail.title}</span>
+          {/* 메일 수신자 및 발신자 */}
+          {selectedMail.sender && (
+            <span className="mailDetail-sender">
+              보낸사람: {selectedMail.sender}
+            </span>
+          )}
+          {selectedMail.receiver && (
+            <span className="mailDetail-sender">
+              받는사람: {selectedMail.receiver}
+            </span>
+          )}
+          {/* 메일 수신 및 발신 시간 */}
+          <span className="mailDetail-receiveAt">
+            {formatReceiveDate(selectedMail.receiveAt ?? selectedMail.sendAt)}
+          </span>
         </div>
 
         {/* 첨부 파일 */}
@@ -86,13 +86,6 @@ const MailDetail = () => {
           className="mailDetail-content"
           dangerouslySetInnerHTML={{ __html: decodedBody }}
         />
-      </div>
-
-      {/* 메일 수신 시간 정보 */}
-      <div className="mailDetail-footer">
-        <span className="mailDetail-receiveAt">
-          {formatReceiveDate(selectedMail.receiveAt ?? selectedMail.sendAt)}
-        </span>
       </div>
     </div>
   );

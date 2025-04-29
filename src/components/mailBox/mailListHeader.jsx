@@ -19,7 +19,7 @@ import { useInitMailbox } from "../../hooks/useInitMailbox";
  * MailListHeader - 메일함 목록 상단의 헤더 컴포넌트
  * @returns {JSX.Element} 메일함 헤더
  */
-const MailListHeader = () => {
+const MailListHeader = ({ isMain, isSearch }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const loadMailbox = useLoadMailbox();
@@ -93,7 +93,7 @@ const MailListHeader = () => {
         // 필요한 메일함만 초기화
         await Promise.all([
           initMailbox(boxType),
-          setSelectedMail(null),
+          //setSelectedMail(null),
           setSelectedGroup([]),
           uncheckAll(boxType),
         ]);
@@ -101,7 +101,7 @@ const MailListHeader = () => {
         // 특정 메일함만 로드
         await Promise.all([
           loadMailbox(boxType),
-          setSelectedMail(null),
+          //setSelectedMail(null),
           setSelectedGroup([]),
           uncheckAll(boxType),
         ]);
@@ -220,20 +220,64 @@ const MailListHeader = () => {
 
   return (
     <div className="mailListHeader-wrapper">
-      <div className="mailListHeader-left">
-        {/* 메일 선택 및 액션 버튼 */}
-        <div className="mailListHeader-mailActions">
-          {/* 전체 선택 체크박스 */}
-          <label className="mailListHeader-custom-checkBox">
-            <input
-              type="checkbox"
-              checked={allChecked}
-              onChange={handleSelectAll}
-            />
-            <span className="checkmark"></span>
-          </label>
+      {isMain && (
+        <div className="mailListHeader-left">
+          {/* 메일 선택 및 액션 버튼 */}
+          <div className="mailListHeader-mailActions">
+            {/* 전체 선택 체크박스 */}
+            <label className="mailListHeader-custom-checkBox">
+              <input
+                type="checkbox"
+                checked={allChecked}
+                onChange={handleSelectAll}
+              />
+              <span className="checkmark"></span>
+            </label>
 
-          <button className="mailActions-items">읽음</button>
+            {/* 읽음, 삭제 버튼 */}
+            <button className="mailActions-items">읽음</button>
+            {boxType != "deleted" && boxType != "spam" && (
+              <button
+                className="mailActions-items"
+                onClick={handleDeleteTemporary}
+              >
+                삭제
+              </button>
+            )}
+          </div>
+
+          {/* 정렬 옵션 */}
+          {isSortOption && (
+            <div className="mailListHeader-sortOptions">
+              <button
+                className="mailListHeader-sortOptions-items"
+                onClick={toggleOption}
+              >
+                정렬
+                <Arrow
+                  className={`mailListHeader-sortOptions-arrow ${
+                    isSortOptionOpen ? "open" : ""
+                  }`}
+                />
+              </button>
+
+              {isSortOptionOpen && (
+                <div className="mailListHeader-sortOptions-container">
+                  <p onClick={() => handleSortOptionClick(SORT_OPTIONS.TIME)}>
+                    시간순 보기
+                  </p>
+                  <p onClick={() => handleSortOptionClick(SORT_OPTIONS.SENDER)}>
+                    받은사람 묶어보기
+                  </p>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      )}
+
+      {!isMain && (
+        <div className="mailListHeader-left">
           {boxType != "deleted" && boxType != "spam" && (
             <button
               className="mailActions-items"
@@ -242,54 +286,29 @@ const MailListHeader = () => {
               삭제
             </button>
           )}
+          {/* 메일 기능 도구 (예: 답장, 전달 등) */}
+          <div className="mailListHeader-mailTools">{mailTools}</div>
         </div>
+      )}
 
-        {/* 정렬 옵션 */}
-        {isSortOption && (
-          <div className="mailListHeader-sortOptions">
-            <button
-              className="mailListHeader-sortOptions-items"
-              onClick={toggleOption}
-            >
-              정렬
-              <Arrow
-                className={`mailListHeader-sortOptions-arrow ${
-                  isSortOptionOpen ? "open" : ""
-                }`}
-              />
-            </button>
-
-            {isSortOptionOpen && (
-              <div className="mailListHeader-sortOptions-container">
-                <p onClick={() => handleSortOptionClick(SORT_OPTIONS.TIME)}>
-                  시간순 보기
-                </p>
-                <p onClick={() => handleSortOptionClick(SORT_OPTIONS.SENDER)}>
-                  받은사람 묶어보기
-                </p>
-              </div>
-            )}
+      {isSearch && (
+        <>
+          {/* 검색창 */}
+          <div className="mailListHeader-searchBar">
+            <input
+              type="text"
+              className="search-input"
+              placeholder="이메일 검색"
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") handleSearch();
+              }}
+            />
+            <Search className="search-icon" onClick={handleSearch} />
           </div>
-        )}
-
-        {/* 메일 기능 도구 (예: 답장, 전달 등) */}
-        <div className="mailListHeader-mailTools">{mailTools}</div>
-      </div>
-
-      {/* 검색창 */}
-      <div className="mailListHeader-searchBar">
-        <input
-          type="text"
-          className="search-input"
-          placeholder="이메일 검색"
-          value={searchInput}
-          onChange={(e) => setSearchInput(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") handleSearch();
-          }}
-        />
-        <Search className="search-icon" onClick={handleSearch} />
-      </div>
+        </>
+      )}
     </div>
   );
 };

@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
-    height: 2.5rem;
+    min-height: 2.375rem;
     border-radius: 1.1875rem 1.1875rem 0 0;
     border-bottom: 1.5px solid #efeff0;
     background: #fff;
@@ -30,10 +30,10 @@
 
     white-space: nowrap;
     font-family: "SUIT", sans-serif;
-    color: #3e3d3d;
+    color: #2f3438;
     font-size: 0.8125rem;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 700;
     line-height: normal;
 
     &:hover {
@@ -45,7 +45,7 @@
   .mailListHeader-left {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    min-height: 100%;
     flex: 1;
   }
 
@@ -149,6 +149,8 @@
   /* 메일 기능 도구 */
   .mailListHeader-mailTools {
     display: flex;
+    min-width: 100%;
+    min-height: 100%;
   }
 
   /* 검색창 컨테이너 */

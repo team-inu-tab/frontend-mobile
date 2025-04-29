@@ -1,10 +1,9 @@
 import "@components/menu/css/menuItem.css";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useMemo } from "react";
 import Write from "@assets/icons/write.svg?react";
-import Notification from "@assets/icons/notification.svg?react";
 import Profile from "@assets/icons/profile.svg?react";
-import Settings from "@assets/icons/settings.svg?react";
+import { useMenuStore } from "@store";
 
 /**
  * MenuItem - 개별 메뉴 아이템 컴포넌트
@@ -15,6 +14,7 @@ import Settings from "@assets/icons/settings.svg?react";
 const MenuItem = ({ title, isMenuBarOpen }) => {
   const location = useLocation();
   const navigate = useNavigate();
+  const toggleMenuBar = useMenuStore((state) => state.toggleMenuBar);
 
   /**
    * title 값에 따라 아이콘 이미지 경로 및 한글 메뉴명을 설정
@@ -25,25 +25,13 @@ const MenuItem = ({ title, isMenuBarOpen }) => {
         return {
           Icon: Write,
           titleName: "메일 쓰기",
-          link: null,
-        };
-      case "notification":
-        return {
-          Icon: Notification,
-          titleName: "알림",
-          link: "/notification",
+          link: "/mail/compose",
         };
       case "profile":
         return {
           Icon: Profile,
           titleName: "프로필",
           link: "/profile",
-        };
-      case "settings":
-        return {
-          Icon: Settings,
-          titleName: "설정",
-          link: "/setting",
         };
       default:
         return {
@@ -56,9 +44,9 @@ const MenuItem = ({ title, isMenuBarOpen }) => {
 
   const isActive = location.pathname === `${link}`;
 
-  // 메일 작성 버튼 클릭 시 모달 열기
-  const handleWriteClick = () => {
-    navigate("/mail/compose"); // URL 변경
+  const handleClick = () => {
+    toggleMenuBar();
+    navigate(link);
   };
 
   // 공통된 내부 렌더링 블럭
@@ -96,26 +84,15 @@ const MenuItem = ({ title, isMenuBarOpen }) => {
     </>
   );
 
-  if (title === "write") {
-    return (
-      <div
-        role="button"
-        tabIndex={0}
-        className={`menuItem-wrapper ${isMenuBarOpen ? "" : "menuItem-close"}`}
-        onClick={handleWriteClick}
-      >
-        {content}
-      </div>
-    );
-  }
-
   return (
-    <Link
-      to={link}
+    <div
+      role="button"
+      tabIndex={0}
+      onClick={handleClick}
       className={`menuItem-wrapper ${isMenuBarOpen ? "" : "menuItem-close"}`}
     >
       {content}
-    </Link>
+    </div>
   );
 };
 

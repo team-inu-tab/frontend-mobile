@@ -1,37 +1,32 @@
 .mailDetail-wrapper {
   display: flex;
-  height: 100%;
+  height: 100vh;
   flex-direction: column;
   gap: 0.5rem;
-  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .mailDetail-container {
   display: flex;
   height: 100%;
-  padding: 1.5rem;
+  padding: 1rem;
+  margin-bottom: 100px;
   flex-direction: column;
-  border-radius: 0.625rem 0.625rem 3.5625rem 0.625rem;
   background: rgba(255, 255, 255, 0.82);
-  box-shadow: 0px 0px 10.3px 0px rgba(0, 0, 0, 0.25);
-  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .mailDetail-header {
   display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
   justify-content: space-between;
   margin-bottom: 0.5rem;
   flex-shrink: 0;
 }
 
-.mailDetail-header-container {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
 .mailDetail-title {
-  color: rgba(62, 61, 61, 0.90);
+  color: rgba(62, 61, 61, 0.9);
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 700;
@@ -40,65 +35,55 @@
 }
 
 .mailDetail-sender {
-  color: rgba(62, 61, 61, 0.26);
-  font-size: 0.625rem;
+  color: rgba(62, 61, 61, 0.5);
+  font-size: 0.7rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
 
-.expandArrow-icon {
-  width: 2rem;
-  height: 2rem;
-  flex-shrink: 0;
-}
-
 .mailDetail-files {
+  display: flex;
+  flex-direction: column;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
   flex-shrink: 0;
 }
 
 .mailDetail-files-title {
-  color: rgba(62, 61, 61, 0.60);
-  font-size: 0.5rem;
+  color: rgba(62, 61, 61, 0.7);
+  font-size: 0.6rem;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   line-height: normal;
 }
 
 .mailDetail-files-list {
+  width: 100%;
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
 }
 
 .mailDetail-content {
+  padding-top: 0.5rem;
   flex: 1;
   min-height: 0;
   overflow-y: auto;
-  color: #3E3D3D;
-  font-size: 0.625rem;
+  color: #3e3d3d;
+  font-size: 0.7rem;
   font-style: normal;
   font-weight: 500;
   line-height: 1.0625rem;
-  padding-right: 0.5rem;
   word-break: break-word;
-}
-
-.mailDetail-footer {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 1rem;
-  flex-shrink: 0;
 }
 
 .mailDetail-sendAt,
 .mailDetail-receiveAt {
-  color: rgba(114, 114, 114, 0.60);
+  color: rgba(114, 114, 114, 0.6);
   text-align: right;
-  font-size: 0.6875rem;
+  font-size: 0.7rem;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 700;
   line-height: normal;
 }

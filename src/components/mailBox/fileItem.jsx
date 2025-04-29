@@ -13,7 +13,8 @@ const FileItem = ({ fileName, emailId, attachmentId, isPreview }) => {
   const handleClick = async () => {
     try {
       await getFile({ emailId, attachmentId, fileName });
-    } catch {
+    } catch (err) {
+      console.log(err);
       toast.error("파일 다운로드에 실패했습니다.");
     }
   };
@@ -25,21 +26,14 @@ const FileItem = ({ fileName, emailId, attachmentId, isPreview }) => {
       role="button"
       tabIndex={0}
     >
-      <div className={`fileItem-header ${isPreview ? "preview" : ""}`}>
-        {/* 첨부 파일 아이콘 */}
-        <img
-          className="fileItem-icon"
-          src="/src/assets/icons/attachment.svg"
-          alt="Attachment icon for email"
-        />
-        {/* 첨부 파일 이름 */}
-        <span className="fileItem-name">{fileName}</span>
-      </div>
-
-      {/* 파일 미리보기
-      <div className={`fileItem-preview ${isPreview ? "preview" : ""}`}>
-        <iframe src={previewUrl} width="100%" height="100%" title="미리보기" />
-      </div> */}
+      {/* 첨부 파일 아이콘 */}
+      <img
+        className="fileItem-icon"
+        src="/src/assets/icons/attachment.svg"
+        alt="Attachment icon for email"
+      />
+      {/* 첨부 파일 이름 */}
+      <span className="fileItem-name">{fileName}</span>
     </div>
   );
 };

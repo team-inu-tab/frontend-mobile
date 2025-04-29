@@ -5,7 +5,7 @@ export const MAIL_TOOLBAR_CONFIG = {
   important: ["reply", "forward", "markSpam"],
   deleted: ["restore", "deletePermanent", "markSpam"],
   scheduled: ["forward", "cancelSend", "reschedule"],
-  self: ["forward", "edit"],
+  selfsent: ["forward", "edit"],
   spam: ["deletePermanent", "unmarkSpam"],
 };
 
@@ -71,12 +71,12 @@ export const getMailBoxConfig = ({
     important: importantMails,
     deleted: deletedMails,
     scheduled: scheduledMails,
-    self: selfSentMails,
+    selfsent: selfSentMails,
     spam: spamMails,
   };
 
   const boxType = Object.keys(pathToTypeMap).find((key) =>
-    pathname.includes(key)
+    pathname.match(new RegExp(`/mail/${key}(/|$)`))
   );
 
   const mails = pathToTypeMap[boxType] || [];
