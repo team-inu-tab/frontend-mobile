@@ -2,7 +2,7 @@ import "@components/mailBox/css/mailListItem.css";
 import { useCheckboxStore, useMailStore } from "../../store";
 import Star from "@assets/icons/star.svg?react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { extractSenderName, formatReceiveDate } from "../../utils/emailUtils";
+import { extractSenderName, formatRelativeDate } from "../../utils/emailUtils";
 
 /**
  * MailListItem - 개별 메일 항목을 렌더링하는 컴포넌트
@@ -104,7 +104,9 @@ const MailListItem = ({ mail }) => {
           </span>
           {/* 수신 시간 */}
           <span className="mailListItem-receiveAt">
-            {formatReceiveDate(mail.receiveAt ?? mail.sendAt ?? mail.createdAt)}
+            {formatRelativeDate(
+              mail.receiveAt ?? mail.sendAt ?? mail.createdAt
+            )}
           </span>
         </div>
 
