@@ -6,16 +6,6 @@
     height: 100vh;
     flex-direction: column;
     align-self: stretch;
-    background: linear-gradient(270deg, rgba(255, 255, 255, 0) 40%, #fff 90%),
-      conic-gradient(
-        from 133deg at 53.57% 50%,
-        #e0dff2 0deg,
-        #d7e1f5 147.15deg,
-        #cad9f0 231.97deg,
-        #d8dcf1 306.66deg,
-        #efefff 336.85deg,
-        #e2def1 360deg
-      );
   }
 
   /* 메일 컨텐츠 공통 스타일 */

@@ -42,18 +42,18 @@
 
 /* 체크박스 hover 시 테두리 변경 */
 .mailListItem-custom-checkBox:hover .checkmark {
-  border-color: #9590D5;
+  border-color: #9590d5;
 }
 
 /* 체크박스 선택 시 스타일 */
-.mailListItem-custom-checkBox input:checked+.checkmark {
-  background-color: #9590D5;
-  border-color: #9590D5;
+.mailListItem-custom-checkBox input:checked + .checkmark {
+  background-color: #9590d5;
+  border-color: #9590d5;
   transform: scale(1.1);
 }
 
 /* 체크된 상태에서 체크 표시 */
-.mailListItem-custom-checkBox input:checked+.checkmark::after {
+.mailListItem-custom-checkBox input:checked + .checkmark::after {
   content: "";
   position: absolute;
   top: 40%;
@@ -81,35 +81,35 @@
 }
 
 .mailListItem-star.important {
-  color: #FFD700;
+  color: #ffd700;
   stroke: #ddbf76;
 }
 
 .mailListItem-mailInfo {
   display: flex;
-  align-items: center;
-  padding: 0.5rem 0.5rem 0.5rem 0;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.5rem 0;
   gap: 0.5rem;
 }
 
-.mailListItem-mailInfo-m {
+.mailListItem-sender-At {
   display: flex;
-  width: 100%;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .mailListItem-sender {
-  color: #2F3438;
-
+  color: #2f3438;
   font-size: 0.75rem;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
   line-height: normal;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 5rem;
 }
 .mailListItem-sender.self {
   display: none;
@@ -118,16 +118,16 @@
 .mailListItem-title-container {
   display: flex;
   align-items: center;
-  width: 10rem;
+  width: 100%;
   gap: 0.25rem;
 }
 
 .mailListItem-title {
-  color: #2F3438;
+  color: #2f3438;
 
   font-size: 0.6875rem;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
   line-height: normal;
   white-space: nowrap;
   overflow: hidden;
@@ -135,26 +135,11 @@
 }
 
 .mailListItem-receiveAt {
-  color: rgba(114, 114, 114, 0.60);
+  color: rgba(114, 114, 114, 0.6);
 
   font-size: 0.5rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   white-space: nowrap;
-}
-
-/* 모바일 */
-@media (max-width: 425px) {
-  .mailListItem-mailInfo {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  .mailListItem-sender {
-    width: 13rem;
-  }
 }

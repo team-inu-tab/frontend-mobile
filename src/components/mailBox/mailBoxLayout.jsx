@@ -4,6 +4,8 @@ import { useMailStore, useMenuStore } from "../../store";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useRef } from "react";
 import MailListHeaderM from "./mailListHeaderM";
+import MailListHeader from "./mailListHeader";
+import backgroundImg from "@assets/images/m_background.svg";
 
 const MailBoxLayout = () => {
   const isMenuBarOpen = useMenuStore((state) => state.isMenuBarOpen);
@@ -24,9 +26,16 @@ const MailBoxLayout = () => {
       className={`mailBoxLayout-container ${
         isMenuBarOpen ? "menuBar-open" : ""
       }`}
+      style={{
+        backgroundImage: `url(${backgroundImg})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
       {isMenuBarOpen && <MenuBar />}
       <MailListHeaderM />
+      <MailListHeader />
       <div className="mailBoxLayout-common">
         <Outlet />
       </div>

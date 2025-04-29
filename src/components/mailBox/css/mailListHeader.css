@@ -1,188 +1,183 @@
-.mailListHeader-wrapper { 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1rem;
-  height: 2.5rem;
-  border-radius: 1.1875rem 1.1875rem 0 0;
-  border-bottom: 1.5px solid #efeff0;
-  background: #FFF;
-}
-.mailListHeader-wrapper p {
-  white-space: nowrap;
-  color: #3E3D3D;
-  font-size: 0.8125rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-}
-.mailListHeader-wrapper button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 2rem;
-  padding: 0 0.5rem; 
-  background: none;
-  border: 1px solid transparent;
-  cursor: pointer;
-  outline: none;
-
-  white-space: nowrap;
-  font-family: 'SUIT', sans-serif;
-  color: #3E3D3D;
-  font-size: 0.8125rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-
-  &:hover {
-    border: 1px solid #e6e6ea;
-    border-radius: 0.5rem;
-  }
-}
-
-.mailListHeader-left {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex: 1;
-}
-
-/* 메일 선택 및 액션 버튼 컨테이너 */
-.mailListHeader-mailActions {
-  display: flex;
-  align-items: center;
-  height: 2.5rem;
-}
-
-/* 체크박스 컨테이너 */
-.mailListHeader-custom-checkBox {
-  display: flex;
-  align-items: center;
-  margin-right: 0.5rem;
-  cursor: pointer;
-  position: relative;
-}
-
-/* 체크박스 숨기기 */
-.mailListHeader-custom-checkBox input {
-  display: none;
-}
-
-/* 체크박스 스타일 */
-.checkmark {
-  width: 0.8rem;
-  height: 0.8rem;
-  border-radius: 0.125rem;
-  border: 1px solid #2F3438;
-  display: inline-block;
-  position: relative;
-}
-
-/* 체크박스 hover 시 테두리 변경 */
-.mailListHeader-custom-checkBox:hover .checkmark {
-  border-color: #9590D5;
-}
-
-/* 체크박스 선택 시 스타일 */
-.mailListHeader-custom-checkBox input:checked + .checkmark {
-  background-color: #9590D5;
-  border-color: #9590D5;
-}
-
-/* 체크된 상태에서 체크 표시 */
-.mailListHeader-custom-checkBox input:checked + .checkmark::after {
-  content: "";
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  width: 4px;
-  height: 8px;
-  border: solid white;
-  border-width: 0 2px 2px 0;
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.mailListHeader-mailActions-items {
-  display: flex;
-  gap: 0.5rem;
-}
-
-/* 정렬 옵션 컨테이너 */
-.mailListHeader-sortOptions-items {
-  display: flex;
-  height: 2.5rem;
-  justify-content: center;
-  align-items: center;
-  gap: 0.3rem;
-}
-.mailListHeader-sortOptions-arrow {
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-  transform: rotate(180deg);
-}
-.mailListHeader-sortOptions-arrow.open {
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-  transform: rotate(0deg);
-}
-
-/* 정렬 옵션 아이템 컨테이너 */
-.mailListHeader-sortOptions-container {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  border-radius: 0.875rem;
-  background: #FFF;
-  box-shadow: 0px 2px 7.3px 0px rgba(0, 0, 0, 0.25);
-  overflow: hidden;
-  z-index: 100;
-}
-.mailListHeader-sortOptions-container p {
-  padding: 0.6rem 1.2rem;
-  margin: 0;
-
-  &:hover {
-    background-color: rgba(229, 231, 233, 0.4);
-  }
-}
-
-/* 메일 기능 도구 */
-.mailListHeader-mailTools {
-  display: flex;
-}
-
-/* 검색창 컨테이너 */
-.mailListHeader-searchBar {
-  display: flex;
-  justify-content:flex-end;
-  position: relative;
-  width: 250px;
-  height: 30px;
-}
-.search-input {
-  padding: 10px 35px 10px 15px;
-  border-radius: 99px;
-  border: none;
-  background-color: #f2f2f2;
-  outline: none;
-  font-size: 14px;
-}
-.search-input::placeholder {
-  color: #888;
-}
-.search-icon {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #888;
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-}
-
-/* 모바일 */
 @media (max-width: 425px) {
   .mailListHeader-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    height: 2.5rem;
+    border-radius: 1.1875rem 1.1875rem 0 0;
+    border-bottom: 1.5px solid #efeff0;
+    background: #fff;
+  }
+  .mailListHeader-wrapper p {
+    white-space: nowrap;
+    color: #3e3d3d;
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .mailListHeader-wrapper button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    padding: 0 0.5rem;
+    background: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    outline: none;
+
+    white-space: nowrap;
+    font-family: "SUIT", sans-serif;
+    color: #3e3d3d;
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    &:hover {
+      border: 1px solid #e6e6ea;
+      border-radius: 0.5rem;
+    }
+  }
+
+  .mailListHeader-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+  }
+
+  /* 메일 선택 및 액션 버튼 컨테이너 */
+  .mailListHeader-mailActions {
+    display: flex;
+    align-items: center;
+    height: 2.5rem;
+  }
+
+  /* 체크박스 컨테이너 */
+  .mailListHeader-custom-checkBox {
+    display: flex;
+    align-items: center;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    position: relative;
+  }
+
+  /* 체크박스 숨기기 */
+  .mailListHeader-custom-checkBox input {
     display: none;
+  }
+
+  /* 체크박스 스타일 */
+  .checkmark {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 0.125rem;
+    border: 1px solid #2f3438;
+    display: inline-block;
+    position: relative;
+  }
+
+  /* 체크박스 hover 시 테두리 변경 */
+  .mailListHeader-custom-checkBox:hover .checkmark {
+    border-color: #9590d5;
+  }
+
+  /* 체크박스 선택 시 스타일 */
+  .mailListHeader-custom-checkBox input:checked + .checkmark {
+    background-color: #9590d5;
+    border-color: #9590d5;
+  }
+
+  /* 체크된 상태에서 체크 표시 */
+  .mailListHeader-custom-checkBox input:checked + .checkmark::after {
+    content: "";
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .mailListHeader-mailActions-items {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  /* 정렬 옵션 컨테이너 */
+  .mailListHeader-sortOptions-items {
+    display: flex;
+    height: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .mailListHeader-sortOptions-arrow {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: rotate(180deg);
+  }
+  .mailListHeader-sortOptions-arrow.open {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: rotate(0deg);
+  }
+
+  /* 정렬 옵션 아이템 컨테이너 */
+  .mailListHeader-sortOptions-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.875rem;
+    background: #fff;
+    box-shadow: 0px 2px 7.3px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    z-index: 100;
+  }
+  .mailListHeader-sortOptions-container p {
+    padding: 0.6rem 1.2rem;
+    margin: 0;
+
+    &:hover {
+      background-color: rgba(229, 231, 233, 0.4);
+    }
+  }
+
+  /* 메일 기능 도구 */
+  .mailListHeader-mailTools {
+    display: flex;
+  }
+
+  /* 검색창 컨테이너 */
+  .mailListHeader-searchBar {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    width: 250px;
+    height: 30px;
+  }
+  .search-input {
+    padding: 10px 35px 10px 15px;
+    border-radius: 99px;
+    border: none;
+    background-color: #f2f2f2;
+    outline: none;
+    font-size: 14px;
+  }
+  .search-input::placeholder {
+    color: #888;
+  }
+  .search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
   }
 }

@@ -92,14 +92,20 @@ const MailListItem = ({ mail }) => {
 
       {/* 메일 정보 (클릭 시 상세 보기) */}
       <div className="mailListItem-mailInfo" onClick={handleMailClick}>
-        {/* 발신자 이름 */}
-        <span
-          className={`mailListItem-sender ${
-            boxType === "selfsent" ? "self" : ""
-          }`}
-        >
-          {extractSenderName(mail.sender) ?? extractSenderName(mail.receiver)}
-        </span>
+        <div className="mailListItem-sender-At">
+          {/* 발신자 이름 */}
+          <span
+            className={`mailListItem-sender ${
+              boxType === "selfsent" ? "self" : ""
+            }`}
+          >
+            {extractSenderName(mail.sender) ?? extractSenderName(mail.receiver)}
+          </span>
+          {/* 수신 시간 */}
+          <span className="mailListItem-receiveAt">
+            {formatReceiveDate(mail.receiveAt ?? mail.sendAt ?? mail.createdAt)}
+          </span>
+        </div>
 
         <div className="mailListItem-title-container">
           {/* 첨부 파일 아이콘 */}
@@ -112,11 +118,6 @@ const MailListItem = ({ mail }) => {
           {/* 메일 제목 */}
           <span className="mailListItem-title">{mail.title}</span>
         </div>
-
-        {/* 수신 시간 */}
-        <span className="mailListItem-receiveAt">
-          {formatReceiveDate(mail.receiveAt ?? mail.sendAt ?? mail.createdAt)}
-        </span>
       </div>
     </div>
   );

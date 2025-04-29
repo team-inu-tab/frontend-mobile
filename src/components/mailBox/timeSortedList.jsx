@@ -11,20 +11,6 @@ const TimeSortedList = ({ mails }) => {
 
   return (
     <div className="timeSortedList-wrapper">
-      {/* 헤더: "시간순 보기" 라벨 및 아이콘 */}
-      <div className="timeSortedList-header">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="6"
-          height="6"
-          viewBox="0 0 6 6"
-          fill="none"
-        >
-          <circle cx="3" cy="3" r="3" fill="#A87CF6" />
-        </svg>
-        <span className="timeSortedList-title">시간순 보기</span>
-      </div>
-
       {/* 메일 목록 컨테이너 */}
       <div className="timeSortedList-container">
         {status === "loading" || mails == null ? (
