@@ -74,7 +74,7 @@
   width: 40%;
   color: #2F3438;
 
-  font-family: "SUIT Variable";
+  font-family: "SUIT";
   font-size: 1rem;
   font-style: normal;
   font-weight: 200;
@@ -327,5 +327,37 @@
   .functionContainer {
     top: 41.1%;
     height: 15%;
+    padding-left: 1.5%;
+  }
+  .function1Wrapper
+  .function2Wrapper
+  .function3Wrapper {
+    width: 24%;
+  }
+  .funcState1
+  .funcState2
+  .funcState3 {
+    width: 3.7919rem;
+    height: 3.7919rem;
+    bottom: 3%;
+  }
+  .function1
+  .function3
+  {
+    width: 0.66633rem;
+    height: 0.66633rem;
+    top: 3%;
+  }
+  .function2 {
+    width: 0.6885rem;
+    height: 0.6885rem;
+    top: 3%;
+  }
+  .functionIntro1
+  .functionIntro2
+  .functionIntro3
+  {
+    font-size: 0.22210rem;
+    top: 9%;
   }
 }
