@@ -4,7 +4,6 @@ import { useSortStore, SORT_OPTIONS, useMailStore } from "../../store";
 import SenderGroupedList from "../../components/mailBox/senderGroupedList";
 import MailPreviewContainer from "../../components/mailBox/mailPreviewContainer";
 import MailDetail from "../../components/mailBox/mailDetail";
-import MailDetailMax from "../../components/mailBox/mailDetailMax";
 import { useInitMailbox } from "../../hooks/useInitMailbox";
 import { useEffect } from "react";
 

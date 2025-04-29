@@ -14,7 +14,6 @@ import FileItem from "./fileItem";
 const MailPreviewItem = ({ mail }) => {
   const isSentByMe = !!mail.receiver; // 사용자가 보낸 메일인지 여부
 
-  const toggleExpanded = useMailStore((state) => state.toggleExpanded);
   const setSelectedMail = useMailStore((state) => state.setSelectedMail); // 현재 선택된 메일을 설정하는 함수
 
   const [decodedBody, setDecodedBody] = useState("");
@@ -70,14 +69,6 @@ const MailPreviewItem = ({ mail }) => {
               </span>
             )}
           </div>
-
-          {/* 확장 버튼 */}
-          <ExpandArrow
-            className={`mailPreviewItem-arrow ${
-              isSentByMe === true ? "" : "received"
-            }`}
-            onClick={toggleExpanded}
-          />
         </div>
 
         {/* 첨부파일 */}

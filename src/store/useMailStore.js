@@ -1539,8 +1539,6 @@ export const useMailStore = create((set) => ({
   selectedMail: null, // 선택된 개별 메일  - mailDetail을 보여주기 위함
   selectedGroup: [], // 선택된 메일 그룹(받은사람 묶어보기 정렬) - mailPreview를 위함
 
-  isExpanded: false, // mailDetailMax 확장 여부
-
   // 메일 리스트 설정 함수
   setReceivedMails: (mails) => set({ receiveMails: mails }),
   setSentMails: (mails) => set({ sentMails: mails }),
@@ -1590,7 +1588,7 @@ export const useMailStore = create((set) => ({
 
           return dateB - dateA; // 최신 순 정렬 (그룹 자체)
         });
-
+      console.log(groupedArray);
       return { groupedMails: groupedArray };
     }),
   setGroupedMailsFromSearch: (emails, senderEmail) =>
@@ -1640,8 +1638,6 @@ export const useMailStore = create((set) => ({
       };
     }),
 
-  // mailDetailMax 확장 여부 토글
-  toggleExpanded: () => set((state) => ({ isExpanded: !state.isExpanded })),
   // 선택된 메일, 확장 여부 초기화
   reset: () => set({ selectedMail: null, isExpanded: false }),
 }));

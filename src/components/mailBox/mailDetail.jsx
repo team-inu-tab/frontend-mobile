@@ -12,7 +12,6 @@ import { parseGmailContent } from "../../utils/parseGmailContent";
  */
 const MailDetail = () => {
   const selectedMail = useMailStore((state) => state.selectedMail); // 현재 선택된 메일 가져오기
-  const toggleExpanded = useMailStore((state) => state.toggleExpanded);
 
   const [decodedBody, setDecodedBody] = useState("");
 
@@ -57,8 +56,6 @@ const MailDetail = () => {
               </span>
             )}
           </div>
-          {/* 확장 버튼 */}
-          <ExpandArrow className="expandArrow-icon" onClick={toggleExpanded} />
         </div>
 
         {/* 첨부 파일 */}
