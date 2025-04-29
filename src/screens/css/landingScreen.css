@@ -177,6 +177,7 @@
 }
 
 .function1Wrapper {
+  position: relative;
   display: grid;
   justify-items: center;
   align-items: center;
