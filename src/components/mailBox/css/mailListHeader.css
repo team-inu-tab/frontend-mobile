@@ -30,10 +30,10 @@
 
     white-space: nowrap;
     font-family: "SUIT", sans-serif;
-    color: #3e3d3d;
+    color: #2f3438;
     font-size: 0.8125rem;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 700;
     line-height: normal;
 
     &:hover {
@@ -45,7 +45,6 @@
   .mailListHeader-left {
     display: flex;
     align-items: center;
-    gap: 1rem;
     flex: 1;
   }
 

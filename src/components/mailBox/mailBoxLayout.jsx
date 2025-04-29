@@ -35,7 +35,7 @@ const MailBoxLayout = () => {
     >
       {isMenuBarOpen && <MenuBar />}
       <MailListHeaderM />
-      <MailListHeader />
+      <MailListHeader isMain={true} />
       <div className="mailBoxLayout-common">
         <Outlet />
       </div>
