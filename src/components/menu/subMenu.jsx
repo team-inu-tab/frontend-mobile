@@ -13,7 +13,7 @@ const SubMenu = ({ isMenuBarOpen }) => {
   const location = useLocation();
   const isActive = location.pathname.startsWith("/mail/");
 
-  const [isSubMenuOpen, setIsSubMenuOpen] = useState(true); // 서브 메뉴 열림/닫힘 상태 관리
+  const [isSubMenuOpen] = useState(true); // 서브 메뉴 열림/닫힘 상태 관리
 
   /**
    * 메일함 카테고리 목록
@@ -29,11 +29,6 @@ const SubMenu = ({ isMenuBarOpen }) => {
     "deletedMail",
   ];
 
-  /**
-   * 서브 메뉴의 열림/닫힘 상태를 변경하는 함수
-   */
-  const toggleSubMenu = () => setIsSubMenuOpen((prev) => !prev);
-
   return (
     <div className={`subMenu-wrapper ${isMenuBarOpen ? "" : "subMenu-close"}`}>
       {/* 마우스 hover 시 나타나는 왼쪽 바 (선택 강조 효과) */}
@@ -46,7 +41,6 @@ const SubMenu = ({ isMenuBarOpen }) => {
         className={`subMenu-container ${isMenuBarOpen ? "" : "subMenu-close"} ${
           isSubMenuOpen ? "subMenu-subMenuOpen" : ""
         } ${isActive ? "active" : ""}`}
-        onClick={toggleSubMenu}
       >
         {/* 서브 메뉴 아이콘 및 제목 */}
         <div
@@ -63,15 +57,6 @@ const SubMenu = ({ isMenuBarOpen }) => {
             메일함
           </span>
         </div>
-
-        {/* 서브 메뉴 열림/닫힘 화살표 아이콘 */}
-        <img
-          className={`subMenu-arrow ${isMenuBarOpen ? "" : "subMenu-close"} ${
-            isSubMenuOpen ? "subMenu-subMenuOpen" : ""
-          }`}
-          src="/src/assets/icons/arrow.svg"
-          alt="화살표 아이콘"
-        />
       </div>
 
       {/* 서브 메뉴 항목 (메일함 리스트) */}

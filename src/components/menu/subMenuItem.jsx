@@ -1,6 +1,7 @@
 import "@components/menu/css/subMenuItem.css";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useMemo } from "react";
+import { useMenuStore } from "@store";
 
 /**
  * SubMenuItem - 서브 메뉴의 개별 항목을 렌더링하는 컴포넌트
@@ -10,6 +11,8 @@ import { useMemo } from "react";
  */
 const SubMenuItem = ({ title, isMenuBarOpen }) => {
   const location = useLocation();
+  const navigate = useNavigate();
+  const toggleMenuBar = useMenuStore((state) => state.toggleMenuBar);
 
   /**
    * title 값에 따라 아이콘 색상 및 한글 메뉴명을 설정
@@ -75,12 +78,18 @@ const SubMenuItem = ({ title, isMenuBarOpen }) => {
 
   const isActive = location.pathname === `${link}`;
 
+  const handleClick = () => {
+    toggleMenuBar();
+    navigate(link);
+  };
+
   return (
-    <Link
-      to={link}
+    <div
+      role="button"
       className={`subMenuItem-wrapper ${
         isMenuBarOpen ? "" : "subMenuItem-close"
       } ${isActive ? "active" : ""}`}
+      onClick={handleClick}
     >
       {/* 서브 메뉴 아이콘 */}
       <svg
@@ -100,7 +109,7 @@ const SubMenuItem = ({ title, isMenuBarOpen }) => {
       >
         {titleName}
       </span>
-    </Link>
+    </div>
   );
 };
 
