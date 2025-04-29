@@ -1,6 +1,5 @@
 import "@components/mailBox/css/mailDetail.css";
 import { useMailStore } from "../../store";
-import ExpandArrow from "@assets/icons/expandArrow.svg?react";
 import FileItem from "./fileItem";
 import { useEffect, useState } from "react";
 import { formatReceiveDate } from "../../utils/emailUtils";

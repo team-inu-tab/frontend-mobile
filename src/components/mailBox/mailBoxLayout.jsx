@@ -10,16 +10,18 @@ import backgroundImg from "@assets/images/m_background.svg";
 const MailBoxLayout = () => {
   const isMenuBarOpen = useMenuStore((state) => state.isMenuBarOpen);
   const toggleMenuBar = useMenuStore((state) => state.toggleMenuBar);
+  const selectedMail = useMailStore((state) => state.selectedMail);
   const setSelectedMail = useMailStore((state) => state.setSelectedMail);
   const setSelectedGroup = useMailStore((state) => state.setSelectedGroup);
 
   const menuBarRef = useRef(null);
 
   useEffect(() => {
-    setSelectedMail(null);
+    //setSelectedMail(null);
     setSelectedGroup([]);
   });
 
+  // 메뉴바 외부 클릭 시 메뉴바 닫기
   useEffect(() => {
     const handleOutsideClick = (e) => {
       if (
@@ -31,7 +33,6 @@ const MailBoxLayout = () => {
       }
     };
 
-    // 모바일 + 데스크탑 모두 대응
     document.addEventListener("touchstart", handleOutsideClick);
     document.addEventListener("mousedown", handleOutsideClick);
 
@@ -55,7 +56,7 @@ const MailBoxLayout = () => {
     >
       {isMenuBarOpen && <MenuBar ref={menuBarRef} />}
       <MailListHeaderM />
-      <MailListHeader isMain={true} />
+      {selectedMail ? <MailListHeader /> : <MailListHeader isMain={true} />}
       <div className="mailBoxLayout-common">
         <Outlet />
       </div>

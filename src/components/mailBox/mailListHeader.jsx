@@ -93,7 +93,7 @@ const MailListHeader = ({ isMain, isSearch }) => {
         // 필요한 메일함만 초기화
         await Promise.all([
           initMailbox(boxType),
-          setSelectedMail(null),
+          //setSelectedMail(null),
           setSelectedGroup([]),
           uncheckAll(boxType),
         ]);
@@ -101,7 +101,7 @@ const MailListHeader = ({ isMain, isSearch }) => {
         // 특정 메일함만 로드
         await Promise.all([
           loadMailbox(boxType),
-          setSelectedMail(null),
+          //setSelectedMail(null),
           setSelectedGroup([]),
           uncheckAll(boxType),
         ]);
@@ -277,10 +277,18 @@ const MailListHeader = ({ isMain, isSearch }) => {
       )}
 
       {!isMain && (
-        <>
+        <div className="mailListHeader-left">
+          {boxType != "deleted" && boxType != "spam" && (
+            <button
+              className="mailActions-items"
+              onClick={handleDeleteTemporary}
+            >
+              삭제
+            </button>
+          )}
           {/* 메일 기능 도구 (예: 답장, 전달 등) */}
           <div className="mailListHeader-mailTools">{mailTools}</div>
-        </>
+        </div>
       )}
 
       {isSearch && (
