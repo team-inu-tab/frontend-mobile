@@ -20,7 +20,7 @@ function Landing() {
 
   const handleLogin = () => {
     window.location.href =
-      "http://maeilmail.co.kr/api/oauth2/authorization/google";
+      "http://m.maeilmail.co.kr/api/oauth2/authorization/google";
   };
 
   return (
@@ -31,9 +31,12 @@ function Landing() {
       <p className="introText">AI mail service</p>
 
       <button className="serviceStartButton" onClick={handleLogin}>
-        <img src={serviceStartButton} className='buttonImg'alt="서비스 시작하기" />
+        <img
+          src={serviceStartButton}
+          className="buttonImg"
+          alt="서비스 시작하기"
+        />
       </button>
-  
 
       <p className="catchphraseShadow">Type less, let Tab do the rest.</p>
       <p className="catchphrase1">Type less, let Tab do the rest.</p>

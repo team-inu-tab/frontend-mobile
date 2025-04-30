@@ -89,6 +89,7 @@
 .mailListItem-mailInfo {
   display: flex;
   width: 100%;
+  min-width: 0;
   flex-direction: column;
   align-items: flex-start;
   padding: 0.5rem 0 0.5rem 0.3rem;
