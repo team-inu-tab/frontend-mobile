@@ -20,7 +20,7 @@ function Landing() {
 
   const handleLogin = () => {
     window.location.href =
-      "http://m.maeilmail.co.kr/api/oauth2/authorization/google";
+      "http://maeilmail.co.kr/api/oauth2/authorization/google";
   };
 
   return (
