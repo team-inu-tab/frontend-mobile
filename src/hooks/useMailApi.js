@@ -1,7 +1,11 @@
 import axios from "axios";
 import useAuthStore from "../store/useAuthStore";
+// import toast from "react-hot-toast";
 
 const BASE_URL = "https://maeilmail.co.kr/api";
+
+let isRefreshing = false;
+let refreshPromise = null;
 
 // axios 인스턴스 생성
 const api = axios.create({
@@ -18,14 +22,36 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
+// // 인증 실패 시 처리
+// const handleAuthFailure = () => {
+//   toast.error("로그인 세션이 만료되었습니다. 다시 로그인해주세요.");
+//   window.location.href = "/login";
+// };
+
 export const useMailApi = () => {
   // 엑세스 토큰 가져오기/호출
   const getToken = async () => {
     let token = useAuthStore.getState().accessToken;
 
     if (!token) {
-      await refresh();
-      token = useAuthStore.getState().accessToken;
+      if (!isRefreshing) {
+        isRefreshing = true;
+        refreshPromise = refresh().finally(() => {
+          isRefreshing = false;
+        });
+      }
+
+      try {
+        await refreshPromise;
+        token = useAuthStore.getState().accessToken;
+
+        if (!token) {
+          throw new Error("토큰 획득 실패");
+        }
+      } catch (err) {
+        console.error("getToken 실패:", err);
+        throw err;
+      }
     }
 
     return token;
@@ -46,13 +72,21 @@ export const useMailApi = () => {
         const accessToken = res.headers.get("Authorization");
         if (accessToken) {
           useAuthStore.getState().setAccessToken(accessToken);
+          console.log("accessToken 갱신 완료");
           return accessToken;
+        } else {
+          console.warn("Authorization 토큰 없음");
         }
+      } else {
+        const errorMsg = await res.text();
+        console.error("리프레시 실패 응답:", errorMsg);
       }
 
+      // handleAuthFailure();
       throw new Error("토큰 갱신 실패");
     } catch (error) {
-      console.error("토큰 갱신 중 오류 발생:", error);
+      console.error("refresh 중 예외:", error);
+      // handleAuthFailure();
       throw error;
     }
   };
@@ -106,39 +140,55 @@ export const useMailApi = () => {
     return res.data;
   };
 
-  // Blob 다운로드 유틸
-  const downloadBase64File = (base64Data, fileName) => {
-    // 1. base64 디코딩 → 바이너리 데이터
-    const byteCharacters = atob(base64Data);
-    const byteNumbers = Array.from(byteCharacters, (char) =>
-      char.charCodeAt(0)
-    );
-    const byteArray = new Uint8Array(byteNumbers);
-
-    // 2. Blob 객체로 변환 (타입은 자동 추론 또는 지정 가능)
-    const blob = new Blob([byteArray]);
-
-    // 3. blob URL 생성
-    const blobUrl = URL.createObjectURL(blob);
-
-    // 4. 임시 링크 생성 후 클릭 → 다운로드 트리거
-    const link = document.createElement("a");
-    link.href = blobUrl;
-    link.download = fileName;
-    document.body.appendChild(link);
-    link.click();
-
-    // 5. 정리
-    document.body.removeChild(link);
-    URL.revokeObjectURL(blobUrl);
+  const getMimeType = (fileName) => {
+    const ext = fileName.split(".").pop()?.toLowerCase();
+    switch (ext) {
+      case "pdf":
+        return "application/pdf";
+      case "xlsx":
+        return "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+      case "xls":
+        return "application/vnd.ms-excel";
+      case "pptx":
+        return "application/vnd.openxmlformats-officedocument.presentationml.presentation";
+      case "ppt":
+        return "application/vnd.ms-powerpoint";
+      case "docx":
+        return "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+      case "doc":
+        return "application/msword";
+      case "png":
+        return "image/png";
+      case "jpg":
+      case "jpeg":
+        return "image/jpeg";
+      case "txt":
+        return "text/plain";
+      default:
+        return "application/octet-stream"; // fallback
+    }
   };
 
   // 파일 상세 보기 - 첨부파일 다운로드
   const getFile = async ({ emailId, attachmentId, fileName }) => {
     await getToken();
-    const res = await api.get(`/mails/${emailId}/file/${attachmentId}`);
 
-    downloadBase64File(res.data, fileName);
+    const res = await api.get(`/mails/${emailId}/file/${attachmentId}`, {
+      responseType: "arraybuffer",
+    });
+
+    const mimeType = getMimeType(fileName);
+
+    const blob = new Blob([res.data], { type: mimeType });
+    const blobUrl = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+    link.href = blobUrl;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(blobUrl);
   };
 
   // 스팸 차단

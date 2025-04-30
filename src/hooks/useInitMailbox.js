@@ -14,10 +14,8 @@ export const useInitMailbox = () => {
   const initMailbox = async () => {
     setStatus("loading");
     try {
-      const [receiveRes, sentRes] = await Promise.all([
-        fetchReceiveMails(),
-        fetchSentMails(),
-      ]);
+      const receiveRes = await fetchReceiveMails();
+      const sentRes = await fetchSentMails();
 
       const receiveMails = receiveRes.emails;
       const sentMails = sentRes.emails;
