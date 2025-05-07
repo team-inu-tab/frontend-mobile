@@ -196,7 +196,7 @@ function MailWriteModal() {
       subject: mailTitle,
       body: mailBody,
     };
-    // 답장, 전달 시 사용자 입력과 HTML을 묶어서 하나의 본문으로 전송
+
     if (decodedBody.length > 0 && ["reply", "forward"].includes(mode)) {
       mailData = {
         toEmail: JSON.parse(recieverTitle),
@@ -256,37 +256,34 @@ function MailWriteModal() {
   }
 
   return (
-    <MailContainer>
+    <>
       {/* 제목 입력 */}
       <input
-        className="mailTitle"
-        placeholder="제목을 입력하세요."
-        value={mailTitle}
-        onChange={(e) => setMailTitle(e.target.value)}
+      className="mailTitle"
+      placeholder="제목을 입력하세요."
+      value={mailTitle}
+      onChange={(e) => setMailTitle(e.target.value)}
       />
 
       {/* 받는 사람 */}
-      <div className="recieverTitleContainer">
-        <p className="recieverLabel">받는사람</p>
-        <input ref={tagifyInputRef} className="recieverTitle" />
-        <p className="toMeText">내게 쓰기</p>
-        <input type="checkbox" className="isToMe" />
+      <div className="recieverContainer">
+        <div className="recieverTitleWrapper">
+          <p className="recieverLabel">받는사람</p>
+          <input ref={tagifyInputRef} className="recieverTitle" />
+          <div className="toMeWrapper">
+            <input type="checkbox" className="isToMe" />
+            <span className="toMeText">내게 쓰기</span>
+          </div>
+        </div>
       </div>
 
-      {/* 참조 */}
-      <div className="refTitleContainer">
-        <p className="refLabel">참조</p>
-        <input className="refTitle" />
-      </div>
-
-      {/* 첨부파일 */}
       <div className="attachedContainer">
         <input
-          type="file"
-          id="file"
-          ref={fileInputRef}
-          onChange={handleFileChange}
-          style={{ display: "none" }}
+        type="file"
+        id="file"
+        ref={fileInputRef}
+        onChange={handleFileChange}
+        style={{ display: "none" }}
         />
         <img
           src={Link}
@@ -298,19 +295,16 @@ function MailWriteModal() {
           {selectedFile ? selectedFile.name : "DROP HERE!"}
         </p>
       </div>
-
-      {/* AI 토글 */}
       <div className="switchContainer">
-        {isAiOn && <img src={aiOnLogo} className="aiOnLogo" alt="ai on logo" />}
-        <p className={`aiText ${isAiOn ? "on" : ""}`}>TabAI</p>
-        <ToggleSwitch
+          {isAiOn && <img src={aiOnLogo} className="aiOnLogo" alt="ai on logo" />}
+          <span className={`aiText ${isAiOn ? "on" : ""}`}>TabAI</span>
+          <ToggleSwitch
           className="aiToggleSwitch"
           checked={isAiOn}
           onChange={() => setIsAiOn(!isAiOn)}
-        />
+          />
       </div>
 
-      {/* 메일 본문 */}
       <WriteContainer
         className={isAiOn ? "writeContainer on" : "writeContainer"}
         value={mailBody}
@@ -320,20 +314,18 @@ function MailWriteModal() {
         isAiOn={isAiOn}
         gptSuggestion={gptSuggestion}
       />
-
-      {/* 버튼 */}
       <div className="buttonContainer">
         <button className="reservationButton">예약하기</button>
         <button
           className="sendButton"
           onClick={() => {
-            sendMail();
+          sendMail();
           }}
         >
           전송하기
         </button>
       </div>
-    </MailContainer>
+    </>
   );
 }
 

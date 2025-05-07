@@ -1,60 +1,78 @@
-.mailTitle{
-    width: 90%;
-    height: 29px;
+.mailTitle {
     position: absolute;
-    top: 10%;
-    left: 5%;
+    width: 10.1875rem;
+    height: 1.8125rem;
+    top: 8%;
+    left: 8%;
     border:none;
     outline: none;
     font-family: 'SUIT';
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: bold;
 }
+
 .mailTitle::placeholder{
     color: #3E3D3D;
-    font-family: 'SUIT';
 }
 
-.recieverTitleContainer{
-    display: flex;
+.recieverContainer {
     position: absolute;
-    top: 19%;
-    left: 5%;
+    display: flex;
+    left: 50%;
+    top: 12.8%;
+    transform: translate(-50%);
+    width: 23.9375rem;
+    height: 2.25rem;
+}
+
+.recieverTitleWrapper {
+    display: flex;
     align-items: center;
-    padding-left: 2%;
-    width: 88%;
-    height:6.5%;
+    width: 100%;
+    height: 100%;
     background-color: rgba(205, 217, 245, 0.5);
     font-weight: bold;
     text-align: left;
-    border-radius: 50px;
+    border-radius: 0.8rem;
     z-index: 1;
 }
 
 .recieverLabel{
-    font-weight: lighter;
+    display: flex;
+    width: 3.375rem;
+    height: 1rem;
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
     color: #3E3D3D;
     font-family: 'SUIT';
+
+    margin-left: 4%;
 }
 
 .recieverTitle{
     position: relative;
     display: inline-block;
     margin-left: 2%;
+    top: 32%;
+    transform: translateY(-20.8%);
     white-space: nowrap;
     width: auto;
     height: 80%;
+    font-size: 0.8125rem;
     font-weight: bold;
     color: #3E3D3D;
     border:none;
     outline: none;
     background-color: rgba(205, 217, 245, 0.1);
-    overflow: visible;
 }
 
 .tagify.recieverTitle {
     border: none;
     outline: none;
+    overflow-y: hidden;
+    overflow-x: scroll;
   }
 
 .tagify {
@@ -89,8 +107,10 @@
 }
 
 .tagify__tag {
-    position: relative;
+    position: absolute;
     display: flex;
+    top: 32%;
+    transform: translateY(-50%);
     align-items: center;
     justify-content: center;
     background-color: #748EEE;
@@ -110,78 +130,56 @@
     color: #ff0000;
 }
 
-.toMeText {
+.toMeWrapper {
     position: absolute;
     display: flex;
+    left: 78%;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 24%;
+    height: 1.8125rem;
+    gap: 0.2rem;
     align-items: center;
-    right: 2.5%;
+}
+
+.toMeText {
+    align-items: center;
     color: #748EEE;
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-right: 2%;
 }
 
 .isToMe {
-    position: absolute;
-    display: flex;
     align-items: center;
-    right: 10.2%;
     border-color: #748EEE;
     outline: none;
-    
-}
-
-.refTitleContainer {
-    display: flex;
-    position: absolute;
-    top: 26.5%;
-    left: 5%;
-    align-items: center;
-    padding-left: 2%;
-    width: 88%;
-    height:6.5%;
-    background-color: rgba(205, 217, 245, 0.5);
-    font-weight: bold;
-    text-align: left;
-    border-radius: 50px;
-    z-index: 1;
-}
-
-.refLabel {
-    font-weight: lighter;
-    color: #3E3D3D;
-}
-
-.refTitle {
-    position: relative;
-    margin-left: 2%;
-    width: 76%;
-    height: 80%;
-    font-weight: bold;
-    color: #3E3D3D;
-    border:none;
-    outline: none;
-    background-color: rgba(205, 217, 245, 0.1);
+    fill: #748EEE;
+    opacity: 84%;
 }
 
 .attachedContainer{
-    display: flex;
     position: absolute;
-    top: 34%;
-    left: 5%;
+    display: flex;
+    top: 17.2%;
+    left: 7%;
     align-items: center;
     padding-left: 2%;
-    width: 88%;
-    height: 15%;
+    width: 23.2rem;
+    height: 4.3125rem;
     background-color: rgba(205, 217, 245, 0.5);
     font-weight: bold;
-    text-align: left;
-    border-radius: 15px;
+    border-radius: 0.9375rem;
     z-index: 1;
 }
 
 .attatchedIcon{
     position: absolute;
     display: flex;
-    top: 10%;
-    left: 2.4%;
+    top: 16%;
+    left: 3.2%;
     width: 1rem;
     height: auto;
 }
@@ -190,7 +188,7 @@
     position: absolute;
     display: flex;
     top: -4.8%;
-    left: 4.8%;
+    left: 9.2%;
     color: #3E3D3D;
     font-family: 'SUIT';
     font-size: 0.8125rem;
@@ -202,36 +200,38 @@
 
 .switchContainer {
     position: absolute;
-    width: 88%;
-    height: 6%;
-    top: 52%;
+    display: flex;
+    width: 9.6875rem;
+    height: 2rem;
+    top: 25.4%;
+    left: 10%;
+    align-items: center;
 }
 
 .aiOnLogo {
-    position: absolute;
     display: inline-block;
-    transform: translateY(-50%);
     width: 0.63475rem;
     height: 0.6875rem;
-    top: 0.8rem;
 }
 
 .aiText {
     position: absolute;
-    display: inline-block;
-    transform: translateY(-36%);
-    left: 0.54rem;
+    display: flex;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 8%;
     font-family: 'SUIT';
-    font-weight: bold;
     font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
     color: #000000;
 }
 
 .aiText.on {
     position: absolute;
-    display: inline-block;
-    transform: translateY(-36%);
-    padding-left: 0.3rem;
+    display: flex;
+    transform: translateY(-50%);
     font-weight: bold;
     background: linear-gradient(
       90deg, 
@@ -278,22 +278,24 @@
 }
 
 .buttonContainer {
-    position: relative;
+    position: absolute;
     display: flex;
-    justify-content: flex-start;
-    width: 25vw;
-    bottom: -54%;
+    flex-direction: row;
+    gap: 1.2rem;
+    width: 18.1875rem;
+    height: 4rem;
+    left: 50%;
+    transform: translateX(-45%);
+    bottom: 2.4%;
 }
 
 .reservationButton {
-    position: absolute;
     justify-content: center;
     align-items:center;
     display: flex;
     border-radius: 18.5px;
-    width: 124px;
-    height: 37px;
-    right: 53%;
+    width: 7.75rem;
+    height: 2.3125rem;
     cursor: pointer;
     border: none;
     background-color: #FFFFFF;
@@ -303,14 +305,12 @@
 }
 
 .sendButton {
-    position: absolute;
     display: flex;
     justify-content: center;
     align-items:center;
     border-radius: 18.5px;
-    width: 124px;
-    height: 37px;
-    left: 53%;
+    width: 7.75rem;
+    height: 2.3125rem;
     cursor: pointer;
     border: none;
     background-color: #748EEE;

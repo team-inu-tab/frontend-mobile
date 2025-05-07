@@ -1,5 +1,5 @@
 import "@components/common/css/mailWritingContainer.css";
-
+import AiLoding from "@components/common/aiLoding.jsx";
 function WriteContainer({
   className,
   value,
@@ -22,10 +22,17 @@ function WriteContainer({
           onKeyDown={onKeyDown}
         />
 
-        {/* AI 제안 영역 */}
+        {/* AI 제안 영역 gptSuggestion &&*/}
         {isAiOn && gptSuggestion && (
           <div className="gptSuggestionBox">
-            <p className="gptSuggestionText">{gptSuggestion}</p>
+            {gptSuggestion ? (
+              <p className="gptSuggestionText">
+                {gptSuggestion}
+              </p>
+            ) : (<div className="generateLoadingContainer">
+                  <AiLoding/>
+                </div>
+            )}
           </div>
         )}
 
