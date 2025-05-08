@@ -45,7 +45,7 @@ const router = createBrowserRouter([
       { path: ":boxType/preview/:mailId", element: <MailPreviewContainer /> },
 
       { path: "profile", element: <ProfileScreen /> },
-
+  
       { path: "receive", element: <ReceiveMailScreen /> },
       { path: "deleted", element: <DeletedMailScreen /> },
       { path: "draft", element: <DraftMailScreen /> },
