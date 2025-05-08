@@ -72,9 +72,9 @@ export const useMailStore = create((set) => ({
 
           return dateB - dateA; // 최신 순 정렬 (그룹 자체)
         });
-      console.log(groupedArray);
       return { groupedMails: groupedArray };
     }),
+
   setGroupedMailsFromSearch: (emails, senderEmail) =>
     set(() => {
       const sanitizedMails = emails.map((mail) => {

@@ -20,7 +20,7 @@ const MailBoxLayout = () => {
   const isComposePage = location.pathname.includes("compose");
 
   useEffect(() => {
-    //setSelectedMail(null);
+    setSelectedMail(null);
     setSelectedGroup([]);
   });
 
