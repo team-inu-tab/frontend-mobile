@@ -45,7 +45,8 @@ const SenderGroupedItem = ({ sender, mailItems = [] }) => {
   }
 
   const handleSelectGroup = (mailItems) => {
-    navigate(`/mail/${boxType}/preview/${mailItems.mail.id}`);
+    console.log(mailItems);
+    navigate(`/mail/${boxType}/preview/${mailItems.id}`);
     setSelectedGroup(mailItems);
   };
 
