@@ -40,7 +40,7 @@ const router = createBrowserRouter([
     element: <MailBoxLayout />,
     children: [
       { path: "compose", element: <MailWriteModal /> }, // 새 메일 작성
-      { path: "compose/:mailId", element: null }, // 임시 메일 수정
+      { path: "compose/:mailId", element: <MailWriteModal /> }, // 임시 메일 수정
       { path: ":boxType/detail/:mailId", element: <MailDetail /> },
       { path: ":boxType/preview/:mailId", element: <MailPreviewContainer /> },
 

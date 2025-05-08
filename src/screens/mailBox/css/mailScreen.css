@@ -11,20 +11,4 @@
     width: 100%;
     height: 100%;
   }
-
-  .MailScreen-preview {
-    display: none;
-  }
-
-  /* showPreview 상태일 때 전환 */
-  .MailScreen-container.show-preview .MailScreen-list {
-    display: none;
-  }
-
-  .MailScreen-container.show-preview .MailScreen-preview {
-    display: block;
-    flex: none;
-    width: 100%;
-    height: 100%;
-  }
 }
