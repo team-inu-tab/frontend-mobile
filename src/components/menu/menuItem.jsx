@@ -31,7 +31,7 @@ const MenuItem = ({ title, isMenuBarOpen }) => {
         return {
           Icon: Profile,
           titleName: "프로필",
-          link: "/profile",
+          link: "/mail/profile",
         };
       default:
         return {
