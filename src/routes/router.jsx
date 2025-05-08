@@ -13,6 +13,7 @@ import SpamMailScreen from "@screens/mailBox/spamMailScreen.jsx";
 import LoginTest from "@screens/loginTest.jsx";
 import SearchMailScreen from "@screens/mailBox/SearchMailScreen";
 import MailDetail from "../components/mailBox/mailDetail";
+import MailWriteModal from "../components/common/mailWriteModal";
 
 const router = createBrowserRouter([
   {
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
     path: "/mail",
     element: <MailBoxLayout />,
     children: [
-      { path: "compose", element: null }, // 새 메일 작성
+      { path: "compose", element: <MailWriteModal /> }, // 새 메일 작성
       { path: "compose/:mailId", element: null }, // 임시 메일 수정
       { path: ":boxType/detail/:mailId", element: <MailDetail /> },
       { path: "receive", element: <ReceiveMailScreen /> },
