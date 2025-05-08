@@ -1,7 +1,7 @@
 import "@components/mailBox/css/mailBoxLayout.css";
 import MenuBar from "../menu/menuBar";
 import { useMailStore, useMenuStore } from "../../store";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { useEffect, useRef } from "react";
 import MailListHeaderM from "./mailListHeaderM";
 import MailListHeader from "./mailListHeader";
@@ -15,6 +15,9 @@ const MailBoxLayout = () => {
   const setSelectedGroup = useMailStore((state) => state.setSelectedGroup);
 
   const menuBarRef = useRef(null);
+
+  const location = useLocation();
+  const isComposePage = location.pathname.includes("compose");
 
   useEffect(() => {
     //setSelectedMail(null);
@@ -56,7 +59,8 @@ const MailBoxLayout = () => {
     >
       {isMenuBarOpen && <MenuBar ref={menuBarRef} />}
       <MailListHeaderM />
-      {selectedMail ? <MailListHeader /> : <MailListHeader isMain={true} />}
+      {!isComposePage &&
+        (selectedMail ? <MailListHeader /> : <MailListHeader isMain={true} />)}
       <div className="mailBoxLayout-common">
         <Outlet />
       </div>
