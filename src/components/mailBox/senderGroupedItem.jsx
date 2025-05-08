@@ -6,13 +6,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 /**
  * SenderGroupedItem - 발신자별로 그룹화된 메일 목록을 표시하는 컴포넌트
- * @param {string} props.sender - 메일 발신자 이름
- * @param {Array<Object>} props.mailItems - 해당 발신자가 보낸 메일 목록
- * @param {string} props.mailItems[].id - 메일 ID
- * @param {string} props.mailItems[].title - 메일 제목
- * @param {string} props.mailItems[].receiveAt - 메일 수신 시간
- * @param {boolean} props.mailItems[].isChecked - 선택 여부
- * @param {boolean} props.mailItems[].isFileExist - 첨부 파일 존재 여부
  * @returns {JSX.Element} 발신자별 메일 리스트 UI
  */
 const SenderGroupedItem = ({ sender, mailItems = [] }) => {
@@ -51,9 +44,9 @@ const SenderGroupedItem = ({ sender, mailItems = [] }) => {
     default:
   }
 
-  const handleSelectGroup = (mail) => {
-    navigate(`/mail/${boxType}/preview/${mail.id}`);
-    setSelectedGroup(mail);
+  const handleSelectGroup = (mailItems) => {
+    navigate(`/mail/${boxType}/preview/${mailItems.mail.id}`);
+    setSelectedGroup(mailItems);
   };
 
   return (

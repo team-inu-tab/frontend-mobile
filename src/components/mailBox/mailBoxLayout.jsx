@@ -18,6 +18,7 @@ const MailBoxLayout = () => {
 
   const location = useLocation();
   const isComposePage = location.pathname.includes("compose");
+  const isProfilePage = location.pathname.includes("profile");
 
   useEffect(() => {
     setSelectedMail(null);
@@ -60,6 +61,7 @@ const MailBoxLayout = () => {
       {isMenuBarOpen && <MenuBar ref={menuBarRef} />}
       <MailListHeaderM />
       {!isComposePage &&
+        !isProfilePage &&
         (selectedMail ? <MailListHeader /> : <MailListHeader isMain={true} />)}
       <div className="mailBoxLayout-common">
         <Outlet />
