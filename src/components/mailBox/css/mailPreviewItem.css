@@ -1,104 +1,106 @@
-.mailPreviewItem-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  gap: 0.25rem;
-  max-width: 100%;
-}
+@media (max-width: 425px) {
+  .mailPreviewItem-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.25rem;
+    max-width: 100%;
+  }
 
-.mailPreviewItem-wrapper.received {
-  justify-content: flex-start;
-}
+  .mailPreviewItem-wrapper.received {
+    justify-content: flex-start;
+  }
 
-.mailPreviewItem-container {
-  display: flex;
-  padding: 1.75rem;
-  width: 60%;
-  max-width: 600px;
-  flex-direction: column;
-  gap: 0.5rem;
-  border-radius: 0.625rem 0.625rem 3.5625rem 0.625rem;
-  background: rgba(255, 255, 255, 0.82);
-  box-shadow: 0px 0px 10.3px 0px rgba(0, 0, 0, 0.25) inset;
-  overflow: hidden;
-}
+  .mailPreviewItem-container {
+    display: flex;
+    padding: 1.75rem;
+    width: 60%;
+    max-width: 600px;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-radius: 0.625rem 0.625rem 3.5625rem 0.625rem;
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: 0px 0px 10.3px 0px rgba(0, 0, 0, 0.25) inset;
+    overflow: hidden;
+  }
 
-.mailPreviewItem-container.received {
-  border-radius: 0.625rem 0.625rem 0.625rem 3.5625rem;
-}
+  .mailPreviewItem-container.received {
+    border-radius: 0.625rem 0.625rem 0.625rem 3.5625rem;
+  }
 
-.mailPreviewItem-header {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  flex-shrink: 0;
-}
+  .mailPreviewItem-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-shrink: 0;
+  }
 
-.mailPreviewItem-header.received {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
+  .mailPreviewItem-header.received {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
 
-.mailPreviewItem-header-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  overflow: hidden;
-}
+  .mailPreviewItem-header-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    overflow: hidden;
+  }
 
-.mailPreviewItem-header-container.received {
-  order: 1;
-  align-items: flex-end;
-}
+  .mailPreviewItem-header-container.received {
+    order: 1;
+    align-items: flex-end;
+  }
 
-.mailPreviewItem-title {
-  color: rgba(62, 61, 61, 0.90);
-  font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  word-break: break-word;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+  .mailPreviewItem-title {
+    color: rgba(62, 61, 61, 0.9);
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
-.mailPreviewItem-sender {
-  color: rgba(62, 61, 61, 0.26);
-  font-size: 0.625rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  word-break: break-word;
-}
+  .mailPreviewItem-sender {
+    color: rgba(62, 61, 61, 0.26);
+    font-size: 0.625rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    word-break: break-word;
+  }
 
-.mailPreviewItem-arrow {
-  width: 1.4375rem;
-  height: 1.4375rem;
-  flex-shrink: 0;
-}
+  .mailPreviewItem-arrow {
+    width: 1.4375rem;
+    height: 1.4375rem;
+    flex-shrink: 0;
+  }
 
-.mailPreviewItem-arrow.received {
-  order: 0;
-}
+  .mailPreviewItem-arrow.received {
+    order: 0;
+  }
 
-.mailPreviewItem-content {
-  color: rgba(62, 61, 61, 0.71);
-  font-size: 0.625rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.0625rem;
-  overflow-y: auto;
-  max-height: 500px;
-  word-break: break-word;
-  padding: 0.5rem;
-}
+  .mailPreviewItem-content {
+    color: rgba(62, 61, 61, 0.71);
+    font-size: 0.625rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.0625rem;
+    overflow-y: auto;
+    max-height: 500px;
+    word-break: break-word;
+    padding: 0.5rem;
+  }
 
-.mailPreviewItem-footer {
-  color: rgba(114, 114, 114, 0.60);
-  font-size: 0.5rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  white-space: nowrap;
-  z-index: 1;
+  .mailPreviewItem-footer {
+    color: rgba(114, 114, 114, 0.6);
+    font-size: 0.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    white-space: nowrap;
+    z-index: 1;
+  }
 }
