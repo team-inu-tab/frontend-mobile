@@ -2,6 +2,7 @@ import "@components/mailBox/css/senderGroupedItem.css";
 import MailListItem from "./mailListItem";
 import { useMailStore } from "../../store";
 import { extractSenderName } from "../../utils/emailUtils";
+import { useLocation, useNavigate } from "react-router-dom";
 
 /**
  * SenderGroupedItem - 발신자별로 그룹화된 메일 목록을 표시하는 컴포넌트
@@ -15,10 +16,44 @@ import { extractSenderName } from "../../utils/emailUtils";
  * @returns {JSX.Element} 발신자별 메일 리스트 UI
  */
 const SenderGroupedItem = ({ sender, mailItems = [] }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const setSelectedGroup = useMailStore((state) => state.setSelectedGroup);
 
-  const handleSelectGroup = (mail) => {
-    setSelectedGroup(mail);
+  // 현재 페이지의 메일함 타입을 추출
+  let boxType = "";
+  switch (true) {
+    case location.pathname.includes("/receive"):
+      boxType = "receive";
+      break;
+    case location.pathname.includes("/important"):
+      boxType = "important";
+      break;
+    case location.pathname.includes("/deleted"):
+      boxType = "deleted";
+      break;
+    case location.pathname.includes("/draft"):
+      boxType = "draft";
+      break;
+    case location.pathname.includes("/scheduled"):
+      boxType = "scheduled";
+      break;
+    case location.pathname.includes("/selfsent"):
+      boxType = "selfsent";
+      break;
+    case location.pathname.includes("/sent"):
+      boxType = "sent";
+      break;
+    case location.pathname.includes("/spam"):
+      boxType = "spam";
+      break;
+    default:
+  }
+
+  const handleSelectGroup = (mailItems) => {
+    navigate(`/mail/${boxType}/preview/${mailItems.mail.id}`);
+    setSelectedGroup(mailItems);
   };
 
   return (

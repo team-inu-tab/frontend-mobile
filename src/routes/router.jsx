@@ -12,8 +12,10 @@ import SentMailScreen from "@screens/mailBox/sentMailScreen.jsx";
 import SpamMailScreen from "@screens/mailBox/spamMailScreen.jsx";
 import LoginTest from "@screens/loginTest.jsx";
 import SearchMailScreen from "@screens/mailBox/SearchMailScreen";
-import MailDetail from "../components/mailBox/mailDetail";
-import MailWriteModal from "../components/common/mailWriteModal";
+import MailDetail from "@components/mailBox/mailDetail";
+import MailWriteModal from "@components/common/mailWriteModal";
+import MailPreviewContainer from "@components/mailBox/mailPreviewContainer";
+import ProfileScreen from "../screens/profile";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +42,10 @@ const router = createBrowserRouter([
       { path: "compose", element: <MailWriteModal /> }, // 새 메일 작성
       { path: "compose/:mailId", element: null }, // 임시 메일 수정
       { path: ":boxType/detail/:mailId", element: <MailDetail /> },
+      { path: ":boxType/preview/:mailId", element: <MailPreviewContainer /> },
+
+      { path: "profile", element: <ProfileScreen /> },
+
       { path: "receive", element: <ReceiveMailScreen /> },
       { path: "deleted", element: <DeletedMailScreen /> },
       { path: "draft", element: <DraftMailScreen /> },
