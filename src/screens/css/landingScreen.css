@@ -171,7 +171,7 @@
   display: flex;
   justify-items: center;
   top: 54.8%;
-  width: 100%;
+  width: 100vw;
   height: 20%;
   padding-left: 2%;
 }
@@ -206,11 +206,10 @@
 }
 
 .funcState1 {
-  position: absolute;
   width: 5.97075rem;
   height: 5.97075rem;
   flex-shrink: 0;
-  bottom: 4%;
+  padding-top: 24%;
 }
 
 .function2Wrapper {
@@ -246,11 +245,10 @@
 }
 
 .funcState2 {
-  position: absolute;
   width: 5.97075rem;
   height: 5.97075rem;
   flex-shrink: 0;
-  bottom: 4%;
+  padding-top: 24%;
 }
 
 .function3Wrapper {
@@ -283,11 +281,10 @@
 }
 
 .funcState3 {
-  position: absolute;
   width: 5.97075rem;
   height: 5.97075rem;
   flex-shrink: 0;
-  bottom: 4%;
+  padding-top: 24%;
 }
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
@@ -300,40 +297,49 @@
     font-size: 2.5rem;
     width: 13.41rem;
     height: 2.39rem;
+    padding-bottom: 0.4rem;
   }
   .landingAILogo {
     width: 0.937rem;
     height: 0.937rem;
     top: 20.4%;
+    padding-top: 0.8rem;
+    padding-bottom: 0.4rem;
   }
   .introText {
     width: 30%;
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     top: 21%;
+    margin-top: 1.6rem;
   }
   .serviceStartButton {
     width: 10rem;
     height: 3rem;
     top: 24%;
+    margin-top: 0.8rem;
   }
   .catchphrase1, .catchphraseShadow {
-    font-size: 0.9rem;
+    font-size: 0.84rem;
     top: 30.3%;
+    padding-top: 1rem;
+    
   }
   .catchphrase2 {
     font-size: 0.6rem;
     top: 33%;
     width: 37.5%;
+    padding-top: 1.2rem;
   }
   .functionContainer {
-    top: 41.1%;
-    height: 15%;
+    top: 44%;
+    height: 20%;
     padding-left: 1.5%;
   }
   .function1Wrapper
   .function2Wrapper
   .function3Wrapper {
     width: 24%;
+    
   }
   .funcState1
   .funcState2
@@ -352,7 +358,7 @@
   .function2 {
     width: 0.6885rem;
     height: 0.6885rem;
-    top: 3%;
+    top: 4%;
   }
   .functionIntro1
   .functionIntro2
