@@ -15,6 +15,7 @@ import SearchMailScreen from "@screens/mailBox/SearchMailScreen";
 import MailDetail from "@components/mailBox/mailDetail";
 import MailWriteModal from "@components/common/mailWriteModal";
 import MailPreviewContainer from "@components/mailBox/mailPreviewContainer";
+import ProfileScreen from "../screens/profile";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,8 @@ const router = createBrowserRouter([
       { path: ":boxType/detail/:mailId", element: <MailDetail /> },
       { path: ":boxType/preview/:mailId", element: <MailPreviewContainer /> },
 
+      { path: "profile", element: <ProfileScreen /> },
+  
       { path: "receive", element: <ReceiveMailScreen /> },
       { path: "deleted", element: <DeletedMailScreen /> },
       { path: "draft", element: <DraftMailScreen /> },

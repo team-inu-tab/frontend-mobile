@@ -278,6 +278,13 @@ export const useMailApi = () => {
     return res.data;
   };
 
+  // 로그아웃
+  const logout = async () => {
+    await getToken();
+    const res = await api.post("/oauth2/logout");
+    return res.data;
+  };
+
   return {
     getToken,
     refresh,
@@ -298,6 +305,7 @@ export const useMailApi = () => {
     getMailById,
     getChatGpt,
     updateTemporary,
+    logout,
   };
 };
 
