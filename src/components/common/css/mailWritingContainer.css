@@ -156,3 +156,16 @@
 .writeField::placeholder {
   font-weight: bold;
 }
+
+@media (max-width: 425px) {
+  .write-container-wrapper {
+    width: 21.42rem;
+    height: 31.32rem;
+    transform: translate(-50%, 54%);
+  }
+  .write-container-wrapper.on {
+    width: 21.42rem;
+    height: 31.32rem;
+    transform: translate(-50%, 54%);
+  }
+}

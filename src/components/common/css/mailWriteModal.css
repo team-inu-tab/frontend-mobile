@@ -15,14 +15,24 @@
     color: #3E3D3D;
 }
 
-.recieverContainer {
+.infoContainer {
     position: absolute;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 12%;
     left: 50%;
-    top: 12.8%;
-    transform: translate(-50%);
+    transform: translateX(-50%);
+    column-gap: 1rem;
     width: 23.9375rem;
-    height: 2.25rem;
+    height: 7rem;
+}
+
+.recieverContainer {
+    display: flex;
+    width: 100%;
+    height: 32%;
+    padding-bottom: 0.4rem;
 }
 
 .recieverTitleWrapper {
@@ -52,7 +62,6 @@
 }
 
 .recieverTitle{
-    position: relative;
     display: inline-block;
     margin-left: 2%;
     top: 32%;
@@ -161,14 +170,13 @@
 }
 
 .attachedContainer{
-    position: absolute;
     display: flex;
-    top: 17.2%;
-    left: 7%;
+    flex-direction: row;
+    gap: 0.4rem;
     align-items: center;
     padding-left: 2%;
-    width: 23.2rem;
-    height: 4.3125rem;
+    width: 100%;
+    height: 60%;
     background-color: rgba(205, 217, 245, 0.5);
     font-weight: bold;
     border-radius: 0.9375rem;
@@ -176,19 +184,14 @@
 }
 
 .attatchedIcon{
-    position: absolute;
     display: flex;
-    top: 16%;
-    left: 3.2%;
     width: 1rem;
     height: auto;
+    padding-left: 0.4rem;
 }
 
 .attachedLabel{
-    position: absolute;
     display: flex;
-    top: -4.8%;
-    left: 9.2%;
     color: #3E3D3D;
     font-family: 'SUIT';
     font-size: 0.8125rem;
@@ -210,8 +213,8 @@
 
 .aiOnLogo {
     display: inline-block;
-    width: 0.63475rem;
-    height: 0.6875rem;
+    width: 0.64rem;
+    height: 0.69rem;
 }
 
 .aiText {
@@ -281,6 +284,7 @@
     position: absolute;
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 1.2rem;
     width: 18.1875rem;
     height: 4rem;
@@ -302,6 +306,7 @@
     font-weight: bold;
     font-size: 0.9rem;
     box-shadow: 0px 2px 6.6px 0px rgba(0, 0, 0, 0.25);
+    margin-top: 0.8rem;
 }
 
 .sendButton {
@@ -318,6 +323,7 @@
     font-weight: bold;
     font-size: 0.9rem;
     box-shadow: 0px 2px 6.6px 0px rgba(0, 0, 0, 0.25);
+    margin-top: 0.8rem;
 }
 
 .compImg {
@@ -346,4 +352,57 @@
     font-weight: bold;
     top: 50%;
     left: 48%;
+}
+
+@media (max-width: 425px) {
+    .mailTitle {
+        width: 8.86rem;
+        height: 1.51rem;
+    }
+    .infoContainer {
+        width: 20.83rem;
+        height: 6.09rem;
+    }
+    .recieverLabel {
+        width: 2.94rem;
+        height: 0.87rem;
+        font-size: 0.71rem;
+    }
+    .recieverTitle {
+        height: 69.6%;
+        font-size: 0.71rem;
+    }
+    .tagify {
+        min-height: 38.3px;
+    }
+    .tagify__tag-text {
+        font-size: 0.7rem;
+    }
+    .toMeWrapper {
+        gap: 0.4rem;
+        margin-right: 4%;
+    }
+    .toMeText {
+        font-size: 0.71rem;
+    }
+    .attatchedIcon {
+        width: 0.87rem;
+    }
+    .attachedLabel {
+        font-size: 0.71rem;
+    }
+    .switchContainer {
+        width: 8.43rem;
+        height: 1.74rem;
+    }
+    .aiOnLogo {
+        width: 0.56rem;
+        height: 0.6rem;
+    }
+    .aiText {
+        font-size: 0.76rem;
+    }
+    .writeContainer {
+        font-size: 0.6rem;
+    }
 }

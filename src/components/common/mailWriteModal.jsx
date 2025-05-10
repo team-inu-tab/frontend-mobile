@@ -266,35 +266,38 @@ function MailWriteModal() {
       />
 
       {/* 받는 사람 */}
-      <div className="recieverContainer">
-        <div className="recieverTitleWrapper">
-          <p className="recieverLabel">받는사람</p>
-          <input ref={tagifyInputRef} className="recieverTitle" />
-          <div className="toMeWrapper">
-            <input type="checkbox" className="isToMe" />
-            <span className="toMeText">내게 쓰기</span>
+      <div className="infoContainer">
+        <div className="recieverContainer">
+          <div className="recieverTitleWrapper">
+            <p className="recieverLabel">받는사람</p>
+            <input ref={tagifyInputRef} className="recieverTitle" />
+            <div className="toMeWrapper">
+              <input type="checkbox" className="isToMe" />
+              <span className="toMeText">내게 쓰기</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="attachedContainer">
-        <input
-        type="file"
-        id="file"
-        ref={fileInputRef}
-        onChange={handleFileChange}
-        style={{ display: "none" }}
-        />
-        <img
-          src={Link}
-          className="attatchedIcon"
-          alt="link icon"
-          onClick={() => fileInputRef.current.click()}
-        />
-        <p className="attachedLabel">
-          {selectedFile ? selectedFile.name : "DROP HERE!"}
-        </p>
+        <div className="attachedContainer">
+          <input
+          type="file"
+          id="file"
+          ref={fileInputRef}
+          onChange={handleFileChange}
+          style={{ display: "none" }}
+          />
+          <img
+            src={Link}
+            className="attatchedIcon"
+            alt="link icon"
+            onClick={() => fileInputRef.current.click()}
+          />
+          <p className="attachedLabel">
+            {selectedFile ? selectedFile.name : "DROP HERE!"}
+          </p>
+        </div>
       </div>
+      
       <div className="switchContainer">
           {isAiOn && <img src={aiOnLogo} className="aiOnLogo" alt="ai on logo" />}
           <span className={`aiText ${isAiOn ? "on" : ""}`}>TabAI</span>
