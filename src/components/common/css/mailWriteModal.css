@@ -366,6 +366,9 @@
         height: 11vh;
         margin-top: 0.4rem;
     }
+    .recieverContainer {
+        height: 34%;
+    }
     .recieverLabel {
         width: 2.94rem;
         height: 0.87rem;
