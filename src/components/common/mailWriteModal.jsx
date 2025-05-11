@@ -269,7 +269,7 @@ function MailWriteModal() {
       <div className="infoContainer">
         <div className="recieverContainer">
           <div className="recieverTitleWrapper">
-            <p className="recieverLabel">받는사람</p>
+            <span className="recieverLabel">받는사람</span>
             <input ref={tagifyInputRef} className="recieverTitle" />
             <div className="toMeWrapper">
               <input type="checkbox" className="isToMe" />

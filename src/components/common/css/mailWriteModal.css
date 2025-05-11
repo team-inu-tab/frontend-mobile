@@ -37,7 +37,7 @@
 
 .recieverTitleWrapper {
     display: flex;
-    align-items: center;
+    align-content: center;
     width: 100%;
     height: 100%;
     background-color: rgba(205, 217, 245, 0.5);
@@ -57,15 +57,15 @@
     line-height: normal;
     color: #3E3D3D;
     font-family: 'SUIT';
-
+    align-content: center;
+    margin-top: 2.5%;
     margin-left: 4%;
 }
 
 .recieverTitle{
     display: inline-block;
+    align-content: center;
     margin-left: 2%;
-    top: 32%;
-    transform: translateY(-20.8%);
     white-space: nowrap;
     width: auto;
     height: 80%;
@@ -117,9 +117,9 @@
 
 .tagify__tag {
     position: absolute;
-    display: flex;
-    top: 32%;
-    transform: translateY(-50%);
+    display: inline-block;
+    top: 36%;
+    transform: translateY(-60%);
     align-items: center;
     justify-content: center;
     background-color: #748EEE;
@@ -376,7 +376,11 @@
         font-size: 0.68rem;
     }
     .tagify {
-        min-height: 38.3px;
+        min-height: 36px;
+    }
+    .tagify__tag {
+        top: 50%;
+        transform: translateY(-88%);
     }
     .tagify__tag-text {
         font-size: 0.5rem;
