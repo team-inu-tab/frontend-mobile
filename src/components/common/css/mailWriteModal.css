@@ -379,7 +379,7 @@
         min-height: 38.3px;
     }
     .tagify__tag-text {
-        font-size: 0.7rem;
+        font-size: 0.5rem;
     }
     .toMeWrapper {
         gap: 0.4rem;
@@ -398,8 +398,7 @@
         width: 32vw;
         height: 3.2vh;
         top: 24%;
-        margin-top: 0.4rem;
-        margin-bottom: 0.4rem;
+        margin-top: 0.7rem;
     }
     .aiOnLogo {
         width: 0.56rem;

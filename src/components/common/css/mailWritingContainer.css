@@ -161,12 +161,14 @@
   .write-container-wrapper {
     width: 84vw;
     height: 56vh;
+    margin-top: 0.2rem;
     transform: translate(-50%, 50%);
   }
   .write-container-wrapper.on {
     width: 84vw;
     height: 56vh;
-    transform: translate(-50%, 55%);
+    margin-top: 0.2rem;
+    transform: translate(-50%, 50%);
   }
   .write-container-shadow {
     width: 92.8%;
