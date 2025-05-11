@@ -2,18 +2,18 @@
   position: relative;
   bottom: 10%;
   left: 50%;
-  transform: translate(-50%, 50%);
+  transform: translate(-50%, 56%);
   width: 88vw;
-  height: 60vh;
+  height: 54vh;
 }
 
 .write-container-wrapper.on {
   position: relative;
   bottom: 10%;
   left: 50%;
-  transform: translate(-49%, 50%);
+  transform: translate(-50%, 56%);
   width: 88vw;
-  height: 60vh;
+  height: 54vh;
 }
 
 .write-container-shadow {

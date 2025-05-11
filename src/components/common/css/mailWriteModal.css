@@ -287,10 +287,10 @@
     align-items: center;
     gap: 1.2rem;
     width: 72vw;
-    height: 4rem;
+    height: 4.8vh;
     left: 50%;
     transform: translateX(-43%);
-    bottom: 2.4%;
+    bottom: 11.2%;
 }
 
 .reservationButton {
