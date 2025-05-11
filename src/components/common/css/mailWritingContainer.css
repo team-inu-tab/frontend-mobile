@@ -160,12 +160,12 @@
 @media (max-width: 425px) {
   .write-container-wrapper {
     width: 84vw;
-    height: 52vh;
-    transform: translate(-50%, 55%);
+    height: 56vh;
+    transform: translate(-50%, 50%);
   }
   .write-container-wrapper.on {
     width: 84vw;
-    height: 52vh;
+    height: 56vh;
     transform: translate(-50%, 55%);
   }
   .write-container-shadow {
