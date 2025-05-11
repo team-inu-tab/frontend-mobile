@@ -364,6 +364,7 @@
     .infoContainer {
         width: 84vw;
         height: 11vh;
+        margin-top: 0.4rem;
     }
     .recieverLabel {
         width: 2.94rem;
@@ -396,7 +397,9 @@
     .aiContainer {
         width: 32vw;
         height: 3.2vh;
-        transform: translateY(-24%);
+        top: 24%;
+        margin-top: 0.4rem;
+        margin-bottom: 0.4rem;
     }
     .aiOnLogo {
         width: 0.56rem;
@@ -417,12 +420,12 @@
         width: 6.74rem;
         height: 2.01rem;
         font-size: 0.78rem;
-        margin-top: 1.2rem;
+        margin-top: 2.4rem;
     }
     .sendButton {
         width: 6.74rem;
         height: 2.01rem;
         font-size: 0.78rem;
-        margin-top: 1.2rem;
+        margin-top: 2.4rem;
     }
 }
