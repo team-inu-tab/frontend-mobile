@@ -24,8 +24,8 @@
     left: 50%;
     transform: translateX(-50%);
     column-gap: 1rem;
-    width: 23.9375rem;
-    height: 7rem;
+    width: 84vw;
+    height: 12vh;
 }
 
 .recieverContainer {
@@ -201,7 +201,7 @@
     opacity: 0.3;
 }
 
-.switchContainer {
+.aiContainer {
     position: absolute;
     display: flex;
     width: 9.6875rem;
@@ -286,10 +286,10 @@
     flex-direction: row;
     align-items: center;
     gap: 1.2rem;
-    width: 18.1875rem;
+    width: 72vw;
     height: 4rem;
     left: 50%;
-    transform: translateX(-45%);
+    transform: translateX(-43%);
     bottom: 2.4%;
 }
 
@@ -358,19 +358,20 @@
     .mailTitle {
         width: 8.86rem;
         height: 1.51rem;
+        font-size: 1.09rem;
     }
     .infoContainer {
-        width: 20.83rem;
-        height: 6.09rem;
+        width: 84vw;
+        height: 11vh;
     }
     .recieverLabel {
         width: 2.94rem;
         height: 0.87rem;
-        font-size: 0.71rem;
+        font-size: 0.68rem;
     }
     .recieverTitle {
         height: 69.6%;
-        font-size: 0.71rem;
+        font-size: 0.68rem;
     }
     .tagify {
         min-height: 38.3px;
@@ -383,7 +384,7 @@
         margin-right: 4%;
     }
     .toMeText {
-        font-size: 0.71rem;
+        font-size: 0.68rem;
     }
     .attatchedIcon {
         width: 0.87rem;
@@ -391,7 +392,7 @@
     .attachedLabel {
         font-size: 0.71rem;
     }
-    .switchContainer {
+    .aiContainer {
         width: 8.43rem;
         height: 1.74rem;
     }
@@ -404,5 +405,22 @@
     }
     .writeContainer {
         font-size: 0.6rem;
+    }
+    .buttonContainer {
+        width: 64vw;
+        transform: translateX(-46%);
+        bottom: 8%;
+    }
+    .reservationButton {
+        width: 6.74rem;
+        height: 2.01rem;
+        font-size: 0.78rem;
+        margin-top: 1.2rem;
+    }
+    .sendButton {
+        width: 6.74rem;
+        height: 2.01rem;
+        font-size: 0.78rem;
+        margin-top: 1.2rem;
     }
 }

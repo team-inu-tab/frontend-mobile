@@ -3,8 +3,8 @@
   bottom: 10%;
   left: 50%;
   transform: translate(-50%, 50%);
-  width: 24.625rem;
-  height: 36rem;
+  width: 88vw;
+  height: 60vh;
 }
 
 .write-container-wrapper.on {
@@ -12,8 +12,8 @@
   bottom: 10%;
   left: 50%;
   transform: translate(-49%, 50%);
-  width: 24.625rem;
-  height: 36rem;
+  width: 88vw;
+  height: 60vh;
 }
 
 .write-container-shadow {
@@ -159,13 +159,17 @@
 
 @media (max-width: 425px) {
   .write-container-wrapper {
-    width: 21.42rem;
-    height: 31.32rem;
+    width: 84vw;
+    height: 56vh;
     transform: translate(-50%, 54%);
   }
   .write-container-wrapper.on {
-    width: 21.42rem;
-    height: 31.32rem;
+    width: 84vw;
+    height: 56vh;
     transform: translate(-50%, 54%);
+  }
+  .write-container-shadow {
+    width: 92.8%;
+    height: 94%;
   }
 }

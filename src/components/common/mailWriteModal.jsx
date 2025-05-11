@@ -278,7 +278,7 @@ function MailWriteModal() {
           </div>
         </div>
 
-        <div className="attachedContainer">
+        <div className="attachedContainer" onClick={() => fileInputRef.current.click()}>
           <input
           type="file"
           id="file"
@@ -290,7 +290,6 @@ function MailWriteModal() {
             src={Link}
             className="attatchedIcon"
             alt="link icon"
-            onClick={() => fileInputRef.current.click()}
           />
           <p className="attachedLabel">
             {selectedFile ? selectedFile.name : "DROP HERE!"}
@@ -298,7 +297,7 @@ function MailWriteModal() {
         </div>
       </div>
       
-      <div className="switchContainer">
+      <div className="aiContainer">
           {isAiOn && <img src={aiOnLogo} className="aiOnLogo" alt="ai on logo" />}
           <span className={`aiText ${isAiOn ? "on" : ""}`}>TabAI</span>
           <ToggleSwitch
@@ -317,6 +316,7 @@ function MailWriteModal() {
         isAiOn={isAiOn}
         gptSuggestion={gptSuggestion}
       />
+
       <div className="buttonContainer">
         <button className="reservationButton">예약하기</button>
         <button
