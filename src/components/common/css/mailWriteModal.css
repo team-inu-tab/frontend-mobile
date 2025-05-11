@@ -207,6 +207,7 @@
     width: 9.6875rem;
     height: 2rem;
     top: 25.4%;
+    transform: translateY(-20%);
     left: 10%;
     align-items: center;
 }
@@ -289,7 +290,7 @@
     width: 72vw;
     height: 4.8vh;
     left: 50%;
-    transform: translateX(-43%);
+    transform: translate(-43%);
     bottom: 11.2%;
 }
 
@@ -393,8 +394,9 @@
         font-size: 0.71rem;
     }
     .aiContainer {
-        width: 8.43rem;
-        height: 1.74rem;
+        width: 32vw;
+        height: 3.2vh;
+        transform: translateY(-24%);
     }
     .aiOnLogo {
         width: 0.56rem;
@@ -408,8 +410,8 @@
     }
     .buttonContainer {
         width: 64vw;
-        transform: translateX(-46%);
-        bottom: 8%;
+        transform: translate(-46%);
+        bottom: 15.6%;
     }
     .reservationButton {
         width: 6.74rem;
