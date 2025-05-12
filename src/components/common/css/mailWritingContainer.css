@@ -1,19 +1,21 @@
 .write-container-wrapper {
   position: relative;
-  bottom: 10%;
+  bottom: 4%;
   left: 50%;
-  transform: translate(-50%, 56%);
-  width: 88vw;
-  height: 54vh;
+  transform: translate(-50%, 74%);
+  width: 84vw;
+  height: 48vh;
+  margin-top: 0.8rem;
 }
 
 .write-container-wrapper.on {
   position: relative;
-  bottom: 10%;
+  bottom: 4%;
   left: 50%;
-  transform: translate(-50%, 56%);
-  width: 88vw;
-  height: 54vh;
+  transform: translate(-50%, 74%);
+  width: 84vw;
+  height: 48vh;
+  margin-top: 0.8rem;
 }
 
 .write-container-shadow {
@@ -155,21 +157,4 @@
 
 .writeField::placeholder {
   font-weight: bold;
-}
-
-@media (max-width: 425px) {
-  .write-container-wrapper {
-    width: 84vw;
-    height: 56vh;
-    transform: translate(-50%, 50%);
-  }
-  .write-container-wrapper.on {
-    width: 84vw;
-    height: 56vh;
-    transform: translate(-50%, 50%);
-  }
-  .write-container-shadow {
-    width: 92.8%;
-    height: 94%;
-  }
 }
