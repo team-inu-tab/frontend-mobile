@@ -31,7 +31,7 @@
 .recieverContainer {
     display: flex;
     width: 100%;
-    height: 32%;
+    height: 24%;
     padding-bottom: 0.4rem;
 }
 
@@ -48,6 +48,9 @@
 }
 
 .recieverLabel{
+    position: absolute;
+    top: 4%;
+    transform: translateY(-50%);
     display: flex;
     width: 3.375rem;
     height: 1rem;
@@ -63,8 +66,13 @@
 }
 
 .recieverTitle{
+    position: absolute;
+    left: 16%;
+    top: 4%;
+    transform: translateY(-1%);
     display: inline-block;
     align-content: center;
+    justify-content: center;
     margin-left: 2%;
     white-space: nowrap;
     width: auto;
@@ -86,13 +94,12 @@
 
 .tagify {
     width: auto;
-    min-height: 44px; 
+    min-height: 2vh; 
     display: inline-block; 
     border: none;
     outline: none;
     white-space: nowrap;
 }
-
 .tagify.tagify {
     --tags-disabled-bg: #748EEE;
     --tag-bg: (#748EEE, 80%);
@@ -119,11 +126,13 @@
     position: absolute;
     display: inline-block;
     top: 36%;
-    transform: translateY(-60%);
+    transform: translateY(-20%);
     align-items: center;
     justify-content: center;
     background-color: #748EEE;
     border: none;
+    width: auto;
+    height: 92%;
     border-radius: 16px;
     z-index: 1;
 }
@@ -132,7 +141,7 @@
     color: #FFFFFF;
     font-family: 'SUIT';
     font-weight: bold;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
 }
 
 .tagify__tag__removeBtn {
@@ -367,23 +376,23 @@
         margin-top: 0.4rem;
     }
     .recieverContainer {
-        height: 34%;
+        height: 34% ;
     }
     .recieverLabel {
+        transform: translateY(-20%);
         width: 2.94rem;
         height: 0.87rem;
         font-size: 0.68rem;
     }
     .recieverTitle {
-        height: 69.6%;
-        font-size: 0.68rem;
+        transform: translateY(16%);
+        height: 72%;
+        font-size: 0.65rem;
     }
-    .tagify {
-        min-height: 36px;
-    }
+    
     .tagify__tag {
         top: 50%;
-        transform: translateY(-88%);
+        transform: translateY(-50%);
     }
     .tagify__tag-text {
         font-size: 0.5rem;
