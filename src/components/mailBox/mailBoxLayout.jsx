@@ -6,6 +6,7 @@ import { useEffect, useRef } from "react";
 import MailListHeaderM from "./mailListHeaderM";
 import MailListHeader from "./mailListHeader";
 import backgroundImg from "@assets/images/m_background.svg";
+import SwipeBack from "./swipeBack";
 
 const MailBoxLayout = () => {
   const isMenuBarOpen = useMenuStore((state) => state.isMenuBarOpen);
@@ -47,26 +48,32 @@ const MailBoxLayout = () => {
   }, [isMenuBarOpen, toggleMenuBar]);
 
   return (
-    <div
-      className={`mailBoxLayout-container ${
-        isMenuBarOpen ? "menuBar-open" : ""
-      }`}
-      style={{
-        backgroundImage: `url(${backgroundImg})`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      {isMenuBarOpen && <MenuBar ref={menuBarRef} />}
-      {!isComposePage && <MailListHeaderM />}
-      {!isComposePage &&
-        !isProfilePage &&
-        (selectedMail ? <MailListHeader /> : <MailListHeader isMain={true} />)}
-      <div className="mailBoxLayout-common">
-        <Outlet />
+    <SwipeBack>
+      <div
+        className={`mailBoxLayout-container ${
+          isMenuBarOpen ? "menuBar-open" : ""
+        }`}
+        style={{
+          backgroundImage: `url(${backgroundImg})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {isMenuBarOpen && <MenuBar ref={menuBarRef} />}
+        {!isComposePage && <MailListHeaderM />}
+        {!isComposePage &&
+          !isProfilePage &&
+          (selectedMail ? (
+            <MailListHeader />
+          ) : (
+            <MailListHeader isMain={true} />
+          ))}
+        <div className="mailBoxLayout-common">
+          <Outlet />
+        </div>
       </div>
-    </div>
+    </SwipeBack>
   );
 };
 export default MailBoxLayout;
