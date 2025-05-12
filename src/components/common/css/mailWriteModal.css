@@ -2,14 +2,13 @@
     position: absolute;
     width: 10.1875rem;
     height: 1.8125rem;
-    top: 12%;
+    top: 8%;
     left: 8%;
     border:none;
     outline: none;
     font-family: 'SUIT';
     font-size: 1.25rem;
     font-weight: bold;
-    margin-bottom: 2%;
 }
 
 .mailTitle::placeholder{
@@ -21,12 +20,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    top: 16%;
+    top: 10%;
     left: 50%;
     transform: translateX(-50%);
     column-gap: 1.2rem;
     width: 84vw;
     height: 12vh;
+    margin-top: 1.2rem;
 }
 
 .recieverContainer {
@@ -294,7 +294,7 @@
     font-weight: bold;
     font-size: 0.9rem;
     box-shadow: 0px 2px 6.6px 0px rgba(0, 0, 0, 0.25);
-    margin-top: 1.6rem;
+    margin-top: 1.2rem;
 }
 
 .sendButton {
@@ -311,7 +311,7 @@
     font-weight: bold;
     font-size: 0.9rem;
     box-shadow: 0px 2px 6.6px 0px rgba(0, 0, 0, 0.25);
-    margin-top: 1.6rem;
+    margin-top: 1.2rem;
 }
 
 .compImg {
@@ -352,13 +352,15 @@
         width: 84vw;
         height: 12vh;
     }
+    .recieverContainer {
+        height: 32%;
+    }
     .recieverLabel {
-        width: 2.94rem;
-        height: 0.87rem;
         font-size: 0.68rem;
     }
     .recieverTitle {
-        transform: translateY(-68%);
+        top: 50%;
+        transform: translateY(-50%);
         font-size: 0.65rem;
     }
     .tagify__tag {
@@ -372,11 +374,19 @@
     .toMeText {
         font-size: 0.68rem;
     }
+    .attachedContainer {
+        height: 68%;
+    }
     .attatchedIcon {
         width: 0.87rem;
     }
     .attachedLabel {
         font-size: 0.71rem;
+    }
+    .aiContainer {
+        top: 24%;
+        padding-top: 0.8rem;
+        padding-bottom: 0.4rem;
     }
     .aiOnLogo {
         width: 0.56rem;
