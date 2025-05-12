@@ -59,7 +59,7 @@ const MailBoxLayout = () => {
       }}
     >
       {isMenuBarOpen && <MenuBar ref={menuBarRef} />}
-      <MailListHeaderM />
+      {!isComposePage && <MailListHeaderM />}
       {!isComposePage &&
         !isProfilePage &&
         (selectedMail ? <MailListHeader /> : <MailListHeader isMain={true} />)}
