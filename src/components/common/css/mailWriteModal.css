@@ -360,12 +360,12 @@
     }
     .recieverTitle {
         top: 50%;
-        transform: translateY(-50%);
+        transform: translateY(-60%);
         font-size: 0.65rem;
     }
     .tagify__tag {
         top: 50%;
-        transform: translateY(-70%);
+        transform: translateY(-72%);
         height: 68%;
     }
     .tagify__tag-text {
