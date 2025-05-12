@@ -31,7 +31,7 @@ function MailWriteModal() {
   let tagifyInstance = null;
 
   const { mailId } = useParams();
-  // const location = useLocation();
+  const location = useLocation();
   const mode = new URLSearchParams(location.search).get("mode");
 
   const { getToken, refresh, getMailById, updateTemporary, getChatGpt } =
