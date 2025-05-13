@@ -38,6 +38,10 @@ function MailWriteModal() {
   const { getToken, refresh, getMailById, updateTemporary, getChatGpt, getUserEmail } =
     useMailApi();
 
+  const handleIsToMe = (e) => {
+    setisToMeChecked(e.target.checked)
+  };
+
   // 답장/전달 모드인 경우 기존 메일 정보 가져오기
   useEffect(() => {
     if (!mailId) return;
