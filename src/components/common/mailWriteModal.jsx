@@ -24,17 +24,18 @@ function MailWriteModal() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [showComplete, setShowComplete] = useState(false);
   const [decodedBody, setDecodedBody] = useState("");
+  const [isToMeChecked, setisToMeChecked] = useState(false);
 
   const gptTimer = useRef(null);
   const tagifyInputRef = useRef(null);
   const fileInputRef = useRef(null);
-  let tagifyInstance = null;
+  const tagifyInstanceRef = useRef(null);
 
   const { mailId } = useParams();
   const location = useLocation();
   const mode = new URLSearchParams(location.search).get("mode");
 
-  const { getToken, refresh, getMailById, updateTemporary, getChatGpt } =
+  const { getToken, refresh, getMailById, updateTemporary, getChatGpt, getUserEmail } =
     useMailApi();
 
   // 답장/전달 모드인 경우 기존 메일 정보 가져오기
@@ -78,21 +79,41 @@ function MailWriteModal() {
     fetchMailDetail();
   }, [mailId, mode]);
 
-  // 받는 사람 입력 처리 (Tagify)
   useEffect(() => {
     if (tagifyInputRef.current) {
-      tagifyInstance = new Tagify(tagifyInputRef.current, {});
+      tagifyInstanceRef.current = new Tagify(tagifyInputRef.current, {});
 
-      tagifyInstance.on("change", (e) => {
+      tagifyInstanceRef.current.on("change", (e) => {
         setRecieverTitle(e.detail.value);
       });
     }
     return () => {
-      if (tagifyInstance) {
-        tagifyInstance.destroy();
+      if (tagifyInstanceRef.current) {
+        tagifyInstanceRef.current.destroy();
       }
     };
   }, []);
+
+  useEffect(() => {
+    const tagifyInst = tagifyInstanceRef.current;
+    if (!tagifyInst) return;
+
+    if (isToMeChecked) {
+      tagifyInst.removeAllTags();
+  
+      api
+        .get("/users/info/email")
+        .then((res) => {
+          tagifyInst.addTags(res.data.email);
+        })
+        .catch((err) => {
+          console.error("내게 쓰기 이메일 로드 실패:", err);
+       });
+
+    } else {
+      tagifyInst.removeAllTags();
+    }
+  }, [isToMeChecked]);
 
   // ESC 키로 AI 기능 끄기
   useEffect(() => {
@@ -271,7 +292,11 @@ function MailWriteModal() {
           <div className="recieverTitleWrapper">
             <span className="recieverLabel">받는사람</span>
             <input ref={tagifyInputRef} className="recieverTitle" />
-            <input type="checkbox" className="isToMe" />
+            <input
+             type="checkbox" 
+             className="isToMe" 
+             checked={isToMeChecked} 
+             onChange={handleIsToMe}/>
             <span className="toMeText">내게 쓰기</span>
           </div>
         </div>
