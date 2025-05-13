@@ -91,6 +91,14 @@ export const useMailApi = () => {
     }
   };
 
+  // 내게 쓰기 사용자 이메일 조회
+  const getUserEmail = async () => {
+    await getToken();
+    const res = await api.get('/users/info/email');
+
+    return res.data.email;
+  };
+
   // 받은 메일함 조회
   const fetchReceiveMails = async () => {
     await getToken();

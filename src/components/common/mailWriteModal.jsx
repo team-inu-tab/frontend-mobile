@@ -14,6 +14,7 @@ import { useLocation, useParams } from "react-router-dom";
 import { parseGmailContent } from "../../utils/parseGmailContent";
 import { extractEmailAddress } from "../../utils/emailUtils";
 import toast from "react-hot-toast";
+import aiApply from "@assets/icons/applyAiReference.svg";
 
 function MailWriteModal() {
   const [isAiOn, setIsAiOn] = useState(false);
@@ -282,6 +283,7 @@ function MailWriteModal() {
 
   return (
     <>
+      {gptSuggestion !== "" && <img src={aiApply} className="aiApplyToast"/>}
       {/* 제목 입력 */}
       <input
       className="mailTitle"
