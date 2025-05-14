@@ -191,14 +191,13 @@ function MailWriteModal() {
     };
   }, [mailBody, isAiOn]);
 
-  // Tab 키로 GPT 제안 적용
-  const handleKeyDown = (e) => {
-    if (e.key === "Tab" && isAiOn && gptSuggestion) {
-      e.preventDefault();
+  // Toast click 시 답변 적용
+  const handleApplySuggestion = () => {
+    if (isAiOn && gptSuggestion) {
       setMailBody(gptSuggestion);
       setGptSuggestion("");
     }
-  };
+  }
 
   // 파일 선택
   const handleFileChange = (event) => {
@@ -283,7 +282,7 @@ function MailWriteModal() {
 
   return (
     <>
-      {gptSuggestion !== "" && <img src={aiApply} className="aiApplyToast"/>}
+      {gptSuggestion !== "" && <img src={aiApply} className="aiApplyToast" onClick={handleApplySuggestion}/>}
       {/* 제목 입력 */}
       <input
       className="mailTitle"
