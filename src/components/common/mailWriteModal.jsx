@@ -340,7 +340,7 @@ function MailWriteModal() {
         value={mailBody}
         onChange={setMailBody}
         htmlContent={decodedBody}
-        onKeyDown={handleKeyDown}
+        // onKeyDown={handleKeyDown}
         isAiOn={isAiOn}
         gptSuggestion={gptSuggestion}
       />
