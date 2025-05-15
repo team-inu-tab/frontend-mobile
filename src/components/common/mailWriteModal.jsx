@@ -121,17 +121,17 @@ function MailWriteModal() {
   }, [isToMeChecked]);
 
   // ESC 키로 AI 기능 끄기
-  useEffect(() => {
-    const handleEscKey = (event) => {
-      if (event.key === "Escape") {
-        setIsAiOn(false);
-      }
-    };
-    document.addEventListener("keydown", handleEscKey);
-    return () => {
-      document.removeEventListener("keydown", handleEscKey);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const handleEscKey = (event) => {
+  //     if (event.key === "Escape") {
+  //       setIsAiOn(false);
+  //     }
+  //   };
+  //   document.addEventListener("keydown", handleEscKey);
+  //   return () => {
+  //     document.removeEventListener("keydown", handleEscKey);
+  //   };
+  // }, []);
 
   // 자동 임시 저장 (1분 주기)
   useEffect(() => {
