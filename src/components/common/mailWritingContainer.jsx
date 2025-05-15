@@ -29,10 +29,7 @@ function WriteContainer({
               <p className="gptSuggestionText">
                 {gptSuggestion}
               </p>
-            ) : (<div className="generateLoadingContainer">
-                  <AiLoding/>
-                </div>
-            )}
+            ) : (<AiLoding/>)}
           </div>
         )}
 
