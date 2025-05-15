@@ -23,13 +23,16 @@ function WriteContainer({
         />
 
         {/* AI 제안 영역 gptSuggestion &&*/}
-        {isAiOn && gptSuggestion && (
+        {isAiOn && (
           <div className="gptSuggestionBox">
             {gptSuggestion ? (
               <p className="gptSuggestionText">
                 {gptSuggestion}
               </p>
-            ) : (<AiLoding/>)}
+            ) : (<div className="generateLoadingContainer">
+                  <AiLoding/>
+                </div>
+            )}
           </div>
         )}
 
