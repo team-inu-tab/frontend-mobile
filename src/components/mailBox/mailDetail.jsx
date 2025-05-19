@@ -28,11 +28,6 @@ const MailDetail = () => {
     load();
   }, [selectedMail]);
 
-  // 선택된 메일이 없으면 화면에 표시하지 않음
-  if (!selectedMail?.id) {
-    return null;
-  }
-
   // 중요 메일, 휴지통 메일함 mailType 구분
   if (selectedMail.mailType === "received") selectedMail.receiver = null;
   else if (selectedMail.mailType === "sent") selectedMail.sender = null;
