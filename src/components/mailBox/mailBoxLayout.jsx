@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 import MailListHeaderM from "./mailListHeaderM";
 import MailListHeader from "./mailListHeader";
 import backgroundImg from "@assets/images/m_background.svg";
-import SwipeBack from "./swipeBack";
+// import SwipeBack from "./swipeBack";
 
 const MailBoxLayout = () => {
   const isMenuBarOpen = useMenuStore((state) => state.isMenuBarOpen);
@@ -22,8 +22,14 @@ const MailBoxLayout = () => {
   const isProfilePage = location.pathname.includes("profile");
 
   useEffect(() => {
-    setSelectedMail(null);
-    setSelectedGroup([]);
+    const shouldSkipReset =
+      location.pathname.includes("detail") ||
+      location.pathname.includes("preview");
+
+    if (!shouldSkipReset) {
+      setSelectedMail(null);
+      setSelectedGroup([]);
+    }
   });
 
   // 메뉴바 외부 클릭 시 메뉴바 닫기
