@@ -48,32 +48,26 @@ const MailBoxLayout = () => {
   }, [isMenuBarOpen, toggleMenuBar]);
 
   return (
-    <SwipeBack>
-      <div
-        className={`mailBoxLayout-container ${
-          isMenuBarOpen ? "menuBar-open" : ""
-        }`}
-        style={{
-          backgroundImage: `url(${backgroundImg})`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        {isMenuBarOpen && <MenuBar ref={menuBarRef} />}
-        {!isComposePage && <MailListHeaderM />}
-        {!isComposePage &&
-          !isProfilePage &&
-          (selectedMail ? (
-            <MailListHeader />
-          ) : (
-            <MailListHeader isMain={true} />
-          ))}
-        <div className="mailBoxLayout-common">
-          <Outlet />
-        </div>
+    <div
+      className={`mailBoxLayout-container ${
+        isMenuBarOpen ? "menuBar-open" : ""
+      }`}
+      style={{
+        backgroundImage: `url(${backgroundImg})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {isMenuBarOpen && <MenuBar ref={menuBarRef} />}
+      {!isComposePage && <MailListHeaderM />}
+      {!isComposePage &&
+        !isProfilePage &&
+        (selectedMail ? <MailListHeader /> : <MailListHeader isMain={true} />)}
+      <div className="mailBoxLayout-common">
+        <Outlet />
       </div>
-    </SwipeBack>
+    </div>
   );
 };
 export default MailBoxLayout;
