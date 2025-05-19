@@ -28,6 +28,10 @@ const MailDetail = () => {
     load();
   }, [selectedMail]);
 
+  if (!selectedMail?.id) {
+    return null;
+  }
+
   // 중요 메일, 휴지통 메일함 mailType 구분
   if (selectedMail.mailType === "received") selectedMail.receiver = null;
   else if (selectedMail.mailType === "sent") selectedMail.sender = null;
