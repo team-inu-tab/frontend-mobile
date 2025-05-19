@@ -52,6 +52,7 @@ const MailListItem = ({ mail }) => {
       navigate(`/mail/compose/${mail.id}?mode=draft`); // 임시 메일 클릭 시 작성 페이지로 이동
     } else {
       setSelectedMail(mail);
+      console.log("선택된 메일 ", mail);
       navigate(`/mail/${boxType}/detail/${mail.id}`);
     }
   };

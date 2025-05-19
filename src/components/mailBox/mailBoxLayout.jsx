@@ -27,10 +27,11 @@ const MailBoxLayout = () => {
       location.pathname.includes("preview");
 
     if (!shouldSkipReset) {
+      console.log("메일함 초기화");
       setSelectedMail(null);
       setSelectedGroup([]);
     }
-  });
+  }, [location.pathname]);
 
   // 메뉴바 외부 클릭 시 메뉴바 닫기
   useEffect(() => {
