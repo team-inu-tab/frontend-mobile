@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 import MailListHeaderM from "./mailListHeaderM";
 import MailListHeader from "./mailListHeader";
 import backgroundImg from "@assets/images/m_background.svg";
-import SwipeBack from "./swipeBack";
+// import SwipeBack from "./swipeBack";
 
 const MailBoxLayout = () => {
   const isMenuBarOpen = useMenuStore((state) => state.isMenuBarOpen);
@@ -22,9 +22,16 @@ const MailBoxLayout = () => {
   const isProfilePage = location.pathname.includes("profile");
 
   useEffect(() => {
-    setSelectedMail(null);
-    setSelectedGroup([]);
-  });
+    const shouldSkipReset =
+      location.pathname.includes("detail") ||
+      location.pathname.includes("preview");
+
+    if (!shouldSkipReset) {
+      console.log("메일함 초기화");
+      setSelectedMail(null);
+      setSelectedGroup([]);
+    }
+  }, [location.pathname]);
 
   // 메뉴바 외부 클릭 시 메뉴바 닫기
   useEffect(() => {
@@ -48,32 +55,26 @@ const MailBoxLayout = () => {
   }, [isMenuBarOpen, toggleMenuBar]);
 
   return (
-    <SwipeBack>
-      <div
-        className={`mailBoxLayout-container ${
-          isMenuBarOpen ? "menuBar-open" : ""
-        }`}
-        style={{
-          backgroundImage: `url(${backgroundImg})`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        {isMenuBarOpen && <MenuBar ref={menuBarRef} />}
-        {!isComposePage && <MailListHeaderM />}
-        {!isComposePage &&
-          !isProfilePage &&
-          (selectedMail ? (
-            <MailListHeader />
-          ) : (
-            <MailListHeader isMain={true} />
-          ))}
-        <div className="mailBoxLayout-common">
-          <Outlet />
-        </div>
+    <div
+      className={`mailBoxLayout-container ${
+        isMenuBarOpen ? "menuBar-open" : ""
+      }`}
+      style={{
+        backgroundImage: `url(${backgroundImg})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {isMenuBarOpen && <MenuBar ref={menuBarRef} />}
+      {!isComposePage && <MailListHeaderM />}
+      {!isComposePage &&
+        !isProfilePage &&
+        (selectedMail ? <MailListHeader /> : <MailListHeader isMain={true} />)}
+      <div className="mailBoxLayout-common">
+        <Outlet />
       </div>
-    </SwipeBack>
+    </div>
   );
 };
 export default MailBoxLayout;

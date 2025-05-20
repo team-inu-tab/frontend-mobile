@@ -28,7 +28,6 @@ const MailDetail = () => {
     load();
   }, [selectedMail]);
 
-  // 선택된 메일이 없으면 화면에 표시하지 않음
   if (!selectedMail?.id) {
     return null;
   }
